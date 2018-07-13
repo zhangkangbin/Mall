@@ -1,0 +1,63 @@
+<resources>
+
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--      <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>-->
+        <!--  标题文字颜色 -->
+        <item name="android:textColorPrimary">#333333</item>
+        <!--Status bar color-->
+        <item name="colorPrimary">#333333</item>
+        <!--Status bar color-->
+
+        <item name="colorAccent">#FF9800</item>
+        <!--toolbar menu text color-->
+        <item name="actionMenuTextColor">#333333</item>
+
+        <!--状态栏 color-->
+        <item name="colorPrimaryDark">#333333</item>
+
+        <!--Window color-->
+        <!--背景颜色-->
+        <item name="android:windowBackground">@color/windowBg</item>
+
+        <item name="android:textColorHighlight">#FF9800</item>
+
+        <!--
+
+                &lt;!&ndash; App文字颜色 &ndash;&gt;
+                <item name="android:textColor">@color/font_black</item>
+
+                &lt;!&ndash;      &lt;!&ndash; 虚拟返回栏的 &ndash;&gt;
+                      <item name="android:navigationBarColor">@color/windowBg</item>&ndash;&gt;
+                &lt;!&ndash;  &ndash;&gt;
+
+
+                <item name="colorControlNormal">@color/font_tips_gray</item>
+                &lt;!&ndash; 滑动返回 &ndash;&gt;
+                <item name="android:windowIsTranslucent">true</item>-->
+    </style>
+
+    <style name="h_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">#EFEFEF</item>
+    </style>
+
+    <!-- 按钮 -->
+    <declare-styleable name="button_selector">
+        <attr name="selectedColor" format="color" />
+        <attr name="pressedColor" format="color" />
+        <attr name="enabledColor" format="color" />
+        <attr name="radiu" format="dimension|reference" />
+    </declare-styleable>
+
+    <!-- title_bar -->
+    <declare-styleable name="Titlebar">
+        <attr name="title" format="string" />
+        <attr name="title_color" format="color" />
+        <attr name="title_bg" format="color" />
+    </declare-styleable>
+
+</resources>
