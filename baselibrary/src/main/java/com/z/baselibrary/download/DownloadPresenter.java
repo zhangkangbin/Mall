@@ -20,7 +20,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 /**
- * Created by liml on 2017/7/22.
+ * Created by zkb on 2017/7/22.
  */
 
 public class DownloadPresenter extends BasePresenter<IDownload> {

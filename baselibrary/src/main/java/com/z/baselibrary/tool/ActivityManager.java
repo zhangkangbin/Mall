@@ -5,10 +5,8 @@ import java.util.Iterator;
 import java.util.Stack;
 
 /**
- * @author oliver ~limingliang@my089.net
- * @ClassName: ActivityManager
- * @Description: 应用程序Activity管理类：用于Activity管理和应用程序退出(这里用一句话描述这个类的作用)
- * @date 2014年12月8日 下午2:34:00
+ *
+ * Activity管理和应用程序退出
  */
 public class ActivityManager {
 
@@ -35,7 +33,7 @@ public class ActivityManager {
      */
     public void addActivity(Activity activity) {
         if (mActivityStack == null) {
-            mActivityStack = new Stack<Activity>();
+            mActivityStack = new Stack<>();
         }
         mActivityStack.add(activity);
     }
@@ -50,9 +48,7 @@ public class ActivityManager {
         if (mActivityStack == null || mActivityStack.size() <= 0)
             return null;
 
-        Iterator<Activity> it = mActivityStack.iterator();
-        while (it.hasNext()) {
-            Activity activity = it.next();
+        for (Activity activity : mActivityStack) {
             if (activity != null && activity.getClass().equals(getActivityCLS)) {
                 return activity;
             }
@@ -111,9 +107,7 @@ public class ActivityManager {
         if (mActivityStack == null || mActivityStack.size() <= 0)
             return;
 
-        Iterator<Activity> it = mActivityStack.iterator();
-        while (it.hasNext()) {
-            Activity activity = it.next();
+        for (Activity activity : mActivityStack) {
             if (activity != null && activity.getClass().equals(cls)) {
                 killActivity(activity);
                 break;
@@ -195,18 +189,16 @@ public class ActivityManager {
         }
     }
 
-    /**
+/*    *//**
      * 打印信息
-     */
+     *//*
     public void printlnStackInfo() {
         if (mActivityStack == null || mActivityStack.size() <= 0) {
            // log.logE(TAG, " :: printlnStack ::  stack= null !!!");
             return;
         }
-        Iterator<Activity> it = mActivityStack.iterator();
-        while (it.hasNext()) {
-            Activity activity = it.next();
-           // log.logE(TAG, " :: printlnStack ::  activity= " + activity.getClass().getSimpleName());
+        for (Activity activity : mActivityStack) {
+            // log.logE(TAG, " :: printlnStack ::  activity= " + activity.getClass().getSimpleName());
         }
-    }
+    }*/
 }
