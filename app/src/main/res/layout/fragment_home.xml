@@ -7,6 +7,10 @@
     tools:context=".ui.HomeFragment">
 
 
+    <com.z.baselibrary.ui.banner.ImageCycleView
+        android:id="@+id/home_banner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

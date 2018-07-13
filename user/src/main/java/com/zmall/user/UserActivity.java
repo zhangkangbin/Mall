@@ -2,13 +2,8 @@ package com.zmall.user;
 
 import android.os.Bundle;
 import android.view.View;
-
 import com.z.baselibrary.ui.BaseAppCompatActivity;
-
 import java.io.IOException;
-
-import okhttp3.Call;
-import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
