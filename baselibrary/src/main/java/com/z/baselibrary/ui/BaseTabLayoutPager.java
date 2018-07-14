@@ -27,10 +27,6 @@ public abstract class BaseTabLayoutPager extends BaseViewPagerActivity {
 
     }
 
-    @Override
-    protected void click(View view) {
-
-    }
 
     abstract  public List<String> getTitiList();
 }

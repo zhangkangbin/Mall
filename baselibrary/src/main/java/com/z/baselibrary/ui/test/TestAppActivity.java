@@ -42,8 +42,7 @@ public class TestAppActivity extends BaseAppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         List<String> stringList = new ArrayList<>();
-        stringList.add("http://120.55.172.189:8080");
-        stringList.add("https://fydadmnew.my089.com");
+        stringList.add("https://test.com");
 
         CommonRecycleViewAdapter<String> adapter
                 = new CommonRecycleViewAdapter<String>(stringList, R.layout.item_testurl_list) {
@@ -69,11 +68,6 @@ public class TestAppActivity extends BaseAppCompatActivity {
 
     @Override
     protected void initData(Bundle savedInstanceState) {
-
-    }
-
-    @Override
-    protected void click(View view) {
 
     }
 

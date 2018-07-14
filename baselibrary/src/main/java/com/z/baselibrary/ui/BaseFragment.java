@@ -70,7 +70,7 @@ public abstract class BaseFragment extends Fragment implements HttpDialogLoading
     public void goToLogin() {
 
         Intent intent = new Intent("android.intent.action.MAIN");
-        intent.setClassName("com.my089.fydlivehomeplugin", "com.my089.fydlivehomeplugin.ui.login.LoginActivity");
+        intent.setClassName("com.zmall.user.login", "com.zmall.user.login.LoginActivity");
         startActivity(intent);
 
     }

@@ -73,7 +73,7 @@ public abstract class MyCallback<T extends BaseBean> implements Callback<T> {
                 showMessage(msg);
                 //
                 Throwable t = new Throwable(msg);
-                onFail(call, t);
+                onFailure(call, t);
                 //登录超时跳转登录页面
                 if (dialogLoading != null) {
                     dialogLoading.goToLogin();//显示登录超时跳转登录dialog
@@ -87,12 +87,12 @@ public abstract class MyCallback<T extends BaseBean> implements Callback<T> {
                 showMessage(msg);
                 //
                 Throwable t = new Throwable(msg);
-                onFail(call, t);
+                onFailure(call, t);
             }
         } else {
             showMessage(tips_request_fail);
             Throwable t = new Throwable(tips_request_fail);
-            onFail(call, t);
+            onFailure(call, t);
 
   /*          if (!isDebug) {
                 try {
@@ -182,5 +182,5 @@ public abstract class MyCallback<T extends BaseBean> implements Callback<T> {
 
     abstract public void onSuccess(Call<T> call, Response<T> response);
 
-    abstract public void onFail(Call<T> call, Throwable t);
+   // abstract public void onFail(Call<T> call, Throwable t);
 }

@@ -34,24 +34,13 @@ public class HttpUtil {
     public final static int HTTP_STATUS_LOGIN_FAIL = 1010;//登录过期
     public final static int HTTP_STATUS_NO_PERMISSION = 1011;//无权限
 
-    //    private static final String URL_TEST = "https://pre-m.my089.net";//登录测试的url
-    //
-    // public final static String HTTP_STATUS_PROMOTER_NOT = "190009";//被推荐人/邀请人房产查询 错误：非推广员
     private final static String TAG = HttpUtil.class.getSimpleName();
-    //  private static final String URL = "https://app300.my089.com";//登录线上的url
-//    private static final String URL_TEST = "https://dev-m.my089.net";//登录测试的url
     private static Retrofit retrofit = null;
 
     private static Context mContext = BaseApplication.get();
 
     private static String mBaseUrl = getHeadUrl();
-    // private static String mBaseUrl = "http://172.16.1.138:8080";
-    /*172.16.1.138:8080  我的开发环境
-    172.16.0.130:8080  开发环境
-    120.55.172.189  公网测试环境*/
-    //public static final String BASE_URL = getHeadUrl();
-//    public static final String URL_BBS_TEST  = "https://pre-bbs.my089.net";//论坛测试的url
-    //
+
 
     private HttpUtil() {
     }
@@ -154,7 +143,7 @@ public class HttpUtil {
      *
      * @return url
      */
-    public static final String baseUrl = "https://fydadmnew.my089.com";
+    public static final String baseUrl = "https://test.com";
 
     public static String getHeadUrl() {
 

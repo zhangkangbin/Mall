@@ -29,7 +29,7 @@ import com.z.baselibrary.ui.dialog.TipsDialog;
  * Created by zhangkb on 2017/12/27 0027.
  */
 
-public abstract class BaseAppCompatActivity extends AppCompatActivity implements View.OnClickListener, HttpDialogLoading {
+public abstract class BaseAppCompatActivity extends AppCompatActivity implements  HttpDialogLoading {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,12 +129,6 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
 
     abstract protected void initData(Bundle savedInstanceState);
 
-    abstract protected void click(View view);
-
-    @Override
-    public void onClick(View view) {
-        click(view);
-    }
 
 
     private TipsDialog tipsDialog;
@@ -166,7 +160,7 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
         // Activity 通过包名来启动
 
         Intent intent = new Intent("android.intent.action.MAIN");
-        intent.setClassName("com.my089.fydlivehomeplugin", "com.my089.fydlivehomeplugin.ui.login.LoginActivity");
+        intent.setClassName("com.zmall.user.login", "com.zmall.user.login.LoginActivity");
         startActivity(intent);
     }
 

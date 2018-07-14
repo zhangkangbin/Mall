@@ -12,7 +12,6 @@ import java.util.List;
 
 public class MainActivity extends BaseViewPagerActivity {
 
-
     @Override
     protected List<Fragment> getFragmentList() {
         List<Fragment> list=new ArrayList<>();
@@ -33,8 +32,5 @@ public class MainActivity extends BaseViewPagerActivity {
 
     }
 
-    @Override
-    protected void click(View view) {
 
-    }
 }
