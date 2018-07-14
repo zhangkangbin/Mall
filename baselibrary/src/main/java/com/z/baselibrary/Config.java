@@ -10,22 +10,19 @@ public class Config {
 
     }
 
+    private boolean isDebug = true;
     private static Config config;
     public static Config getConfig() {
-
         if (config == null) {
             config = new Config();
         }
         return config;
     }
-
     public boolean isDebug() {
         return isDebug;
     }
-
     public void setDebug(boolean debug) {
         isDebug = debug;
     }
 
-    private boolean isDebug = false;
 }

@@ -30,6 +30,7 @@ public class LoginActivity extends BaseAppCompatActivity {
     @Override
     protected void initView(Bundle savedInstanceState) {
 
+        inittoobar("登录");
         login_edt_name=findViewById(R.id.login_edt_name);
         login_edt_pwd=findViewById(R.id.login_edt_pwd);
 

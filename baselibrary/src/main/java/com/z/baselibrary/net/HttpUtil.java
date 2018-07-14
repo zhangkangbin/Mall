@@ -37,14 +37,17 @@ public class HttpUtil {
     private final static String TAG = HttpUtil.class.getSimpleName();
     private static Retrofit retrofit = null;
 
-    private static Context mContext = BaseApplication.get();
+    private static Context mContext=BaseApplication.get();
 
     private static String mBaseUrl = getHeadUrl();
 
 
     private HttpUtil() {
     }
+    public static void init(Context context){
 
+        mContext=context;
+    }
     public static void init(String baseUrl) {
         mBaseUrl = baseUrl;
     }

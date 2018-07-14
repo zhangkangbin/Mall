@@ -2,6 +2,8 @@ package com.z.baselibrary.net;
 
 
 import android.text.TextUtils;
+
+import com.z.baselibrary.log.LogUtils;
 import com.z.baselibrary.net.imp.HttpDialogLoading;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,7 +25,7 @@ public abstract class MyCallback<T extends BaseBean> implements Callback<T> {
     /**
      * 错误的处理
      */
-    private int mErrorTips;  //   1 showToast   2 ,showDialog
+    private int mErrorTips=1;  //   1 showToast   2 ,showDialog
     private boolean mIsShowLoading = true;  //  是否要显示加载中
 
     /**
@@ -114,6 +116,7 @@ public abstract class MyCallback<T extends BaseBean> implements Callback<T> {
 
     @Override
     public void onFailure(Call<T> call, Throwable t) {
+        LogUtils.getInstance().e(TAG, "onFailure ::: fail-" + t.getMessage());
         dismissLoading();
         showMessage(tips_request_fail);
 /*        if (NetUtils.isConnected()) {
