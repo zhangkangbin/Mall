@@ -21,7 +21,7 @@ import com.z.baselibrary.ui.dialog.TipsDialog;
  * Created by zhangkb on 2018/1/30 0030.
  */
 
-public abstract class BaseFragment extends Fragment implements HttpDialogLoading, View.OnClickListener {
+public abstract class BaseFragment extends Fragment implements HttpDialogLoading{
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -17,11 +17,9 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 
-/**
- * Created by zhangkb on 2017/5/24 0024.
- */
 
 /**
+ *  Created by zhangkb on 2018/5/24 0024.
  * 拦截请求 ，把cookie add to header
  */
 public class ReadCookiesInterceptor implements Interceptor {
