@@ -229,9 +229,14 @@ public class ListBindDataHelper<T extends BaseBean, D> {
 
             }
 
+      /*      @Override
+            public void onFailure(Call<T> call, Throwable t) {
+                super.onFailure(call, t);
+            }
+*/
             @Override
-            public void onFail(Call<T> call, Throwable t) {
-
+            public void onFailure(Call<T> call, Throwable t) {
+                super.onFailure(call, t);
                 if (listRefreshListener != null && STATE_LOADING_RE_FRESH == mState) {
                     listRefreshListener.onRefresh();
                 }

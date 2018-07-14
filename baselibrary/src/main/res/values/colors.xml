@@ -8,7 +8,7 @@
     <color name="color_bule_light">#419BE3</color>
     <!-- 颜色：黑色 ui说把这里000000 改成666666-->
     <color name="color_black">#666666</color>
-
+    <color name="color_red">#dc2828</color>
     <color name="title_text">#666666</color>
     <color name="title_bg">#FFFFFF</color>
     <color name="title_bg_orange">#FFFFFF</color>

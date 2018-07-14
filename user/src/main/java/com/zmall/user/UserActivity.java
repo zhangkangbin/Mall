@@ -40,9 +40,6 @@ public class UserActivity extends BaseAppCompatActivity {
 
         }
     }
-    @Override
-    protected void click(View view) {
 
-    }
 
 }

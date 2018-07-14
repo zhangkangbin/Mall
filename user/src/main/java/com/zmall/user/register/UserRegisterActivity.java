@@ -24,9 +24,6 @@ public class UserRegisterActivity extends BaseAppCompatActivity {
 
     }
 
-    @Override
-    protected void click(View view) {
 
-    }
 
 }

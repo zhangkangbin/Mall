@@ -13,7 +13,6 @@ import retrofit2.http.Url;
 
 public interface UserApi {
 
-
     @POST("user/login")
     Call<BaseBean> userLogin(@FieldMap Map<String,String> map);
 }

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/color_white"
     tools:context=".login.LoginActivity">
 
     <include layout="@layout/include_toolbar" />
@@ -27,6 +28,7 @@
 
             <EditText
                 android:id="@+id/login_edt_pwd"
+                android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -45,15 +47,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/space_10"
                     android:layout_gravity="left"
+                    android:padding="@dimen/space_10"
                     android:text="注册" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/space_10"
                     android:layout_gravity="right"
+                    android:padding="@dimen/space_10"
                     android:text="忘记密码" />
 
             </FrameLayout>

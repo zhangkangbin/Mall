@@ -24,7 +24,6 @@ public class LoginActivity extends BaseAppCompatActivity {
         return R.layout.activity_login;
     }
 
-
     private EditText login_edt_name;
     private EditText login_edt_pwd;
 
