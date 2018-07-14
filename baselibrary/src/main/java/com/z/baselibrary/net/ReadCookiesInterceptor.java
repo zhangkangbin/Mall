@@ -24,7 +24,7 @@ import okhttp3.Response;
  */
 public class ReadCookiesInterceptor implements Interceptor {
     //
-    public static final String PREF_COOKIES = "fyd_cookie_name";//注意不能跟httpClient中一样，类型问题。
+    public static final String PREF_COOKIES = "mall_cookie_name";
     private final String TAG = ReadCookiesInterceptor.class.getSimpleName();
     private Context context;
 
