@@ -8,6 +8,9 @@ import com.zmall.user.login.LoginActivity;
 
 import java.util.Map;
 
+/**
+ * @author zhangkb
+ */
 public class User implements IComponent {
     @Override
     public String getName() {

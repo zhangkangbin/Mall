@@ -11,13 +11,16 @@ import com.zkb.mall.ui.HomeFragment;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
+/**
+ * @author zhangkb
+ */
 public class MainActivity extends BaseViewPagerActivity {
 
     @Override
     protected List<Fragment> getFragmentList() {
         List<Fragment> list=new ArrayList<>();
-
         list.add(new HomeFragment());
         list.add(new HomeFragment());
         list.add(new HomeFragment());
@@ -31,14 +34,10 @@ public class MainActivity extends BaseViewPagerActivity {
 
     @Override
     protected void initData(Bundle savedInstanceState) {
-
-        findViewById(R.id.main_rb_me).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CC.obtainBuilder("User").build().call();
-            }
-        });
+        ConcurrentLinkedQueue list;
+     //   list.add()
+        //CC.registerGlobalInterceptor();
+        findViewById(R.id.main_rb_me).setOnClickListener(view -> CC.obtainBuilder("User").build().call());
     }
-
 
 }

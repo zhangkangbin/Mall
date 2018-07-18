@@ -20,7 +20,8 @@ public class SelectorUtils {
     private static final String TAG = "SelectorUtils";
 
     static void setBackground(Context context, AttributeSet attrs, View view) {
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.button_selector);//从xml那传来的一组值
+        //从xml那传来的一组值
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.button_selector);
 
         //选中
         int selectedColor = typedArray.getColor(R.styleable.button_selector_selectedColor, context.getResources().getColor(R.color.color_style_btn_selected));
@@ -35,7 +36,7 @@ public class SelectorUtils {
         //enable false
         int enabledColor = typedArray.getColor(R.styleable.button_selector_enabledColor, context.getResources().getColor(R.color.color_btn_enable_false));
 
-        float r = typedArray.getDimensionPixelSize(R.styleable.button_selector_radiu, 6);
+        float r = typedArray.getDimensionPixelSize(R.styleable.button_selector_radius, 6);
         typedArray.recycle();
       //  float radius = Common.dip2px(context, r);
        // Logger.getLogger().logD(TAG, "radius--:" + radius);

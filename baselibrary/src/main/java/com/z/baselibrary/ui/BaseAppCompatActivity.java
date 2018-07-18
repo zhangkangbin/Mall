@@ -26,7 +26,9 @@ import com.z.baselibrary.tool.ActivityManager;
 import com.z.baselibrary.ui.dialog.TipsDialog;
 
 /**
- * Created by zhangkb on 2017/12/27 0027.
+ *
+ * @author zhangkb
+ * @date 2017/12/27 0027
  */
 
 public abstract class BaseAppCompatActivity extends AppCompatActivity implements  HttpDialogLoading {
@@ -34,7 +36,8 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//竖屏
+        //竖屏
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(getLayoutId());
 
 
@@ -43,13 +46,12 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
         initData(savedInstanceState);
     }
 
+
+    protected Toolbar mToolbar;
     /**
      * set toolbar title
      *
-     * @param
      */
-    protected Toolbar mToolbar;
-
     public Toolbar inittoobar(int titleId) {
 
         return inittoobar(getResources().getString(titleId));
@@ -79,7 +81,7 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
     public Toolbar getToolbar(String title, int id) {
 
         if (mToolbar == null) {
-            mToolbar = (Toolbar) findViewById(R.id.toolbar);
+            mToolbar =  findViewById(R.id.toolbar);
             if (mToolbar == null) {
                 return null;
             }
@@ -97,7 +99,7 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
 
         }
         if (toolbar_title == null) {
-            toolbar_title = (TextView) findViewById(R.id.toolbar_title);
+            toolbar_title =  findViewById(R.id.toolbar_title);
         }
         if (TextUtils.isEmpty(title)) {
 
@@ -164,6 +166,7 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
         startActivity(intent);
     }
 
+    @Override
     public void showToast(String text) {
 
         Toast.makeText(this.getApplicationContext(), text, Toast.LENGTH_SHORT).show();
@@ -172,7 +175,9 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
 
     @Override
     public void showTipsDialog(String msg) {
-        if (TextUtils.isEmpty(msg)) return;
+        if (TextUtils.isEmpty(msg)) {
+            return;
+        }
         new TipsDialog.Builder(this).setContentText(msg).show();
     }
 
@@ -240,4 +245,6 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
         ((InputMethodManager) getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE))
                 .hideSoftInputFromWindow(view.getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
     }
+
+
 }

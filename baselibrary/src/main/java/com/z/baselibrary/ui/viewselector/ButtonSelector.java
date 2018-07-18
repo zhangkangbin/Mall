@@ -5,7 +5,9 @@ import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 
 /**
- * Created by zhangkb on 2017/9/25 0025.
+ *
+ * @author zhangkb
+ * @date 2017/9/25 0025
  * 设置按钮选择和默认的颜色
  * 按钮的圆度radius
  */

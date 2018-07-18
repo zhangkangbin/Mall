@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/color_white"
     tools:context=".login.LoginActivity">
 
     <include layout="@layout/include_toolbar" />
@@ -21,23 +20,43 @@
             android:layout_margin="@dimen/space_15"
             android:orientation="vertical">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/space_10"
+                android:src="@drawable/ic_search" />
+
             <EditText
                 android:id="@+id/login_edt_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/space_20"
+                android:background="@drawable/circle_layout_white"
+                android:hint="请输入账号"
+                android:paddingLeft="@dimen/space_10"
+                android:textColorHint="@color/colorLoginHint" />
 
             <EditText
                 android:id="@+id/login_edt_pwd"
-                android:inputType="textPassword"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/space_10"
+                android:background="@drawable/circle_layout_white"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:paddingLeft="@dimen/space_10"
+                android:textColorHint="@color/colorLoginHint" />
+
 
             <Button
                 android:id="@+id/login_btn_start"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginTop="@dimen/space_15"
-                android:text="登录" />
+                android:background="@color/color_red"
+                android:text="登录"
+                android:textColor="@color/color_white" />
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -45,18 +64,21 @@
                 android:layout_marginTop="@dimen/space_10">
 
                 <TextView
+                    android:id="@+id/login_tv_register"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:padding="@dimen/space_10"
-                    android:text="注册" />
+                    android:text="注册"
+                    android:textColor="@color/color_black" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:padding="@dimen/space_10"
-                    android:text="忘记密码" />
+                    android:text="忘记密码"
+                    android:textColor="@color/color_black" />
 
             </FrameLayout>
 
