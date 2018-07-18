@@ -15,6 +15,7 @@
 
 
         <LinearLayout
+            android:id="@+id/login_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/space_15"
@@ -35,6 +36,7 @@
                 android:background="@drawable/circle_layout_white"
                 android:hint="请输入账号"
                 android:paddingLeft="@dimen/space_10"
+                android:textSize="@dimen/text_size_14"
                 android:textColorHint="@color/colorLoginHint" />
 
             <EditText
@@ -44,9 +46,45 @@
                 android:layout_marginTop="@dimen/space_10"
                 android:background="@drawable/circle_layout_white"
                 android:hint="请输入密码"
+                android:textSize="@dimen/text_size_14"
                 android:inputType="textPassword"
                 android:paddingLeft="@dimen/space_10"
                 android:textColorHint="@color/colorLoginHint" />
+
+            <LinearLayout
+                android:id="@+id/login_ll_code"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/space_20"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/register_edt_code"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/space_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/circle_layout_white"
+                    android:hint="请输入验证码"
+                    android:inputType="number"
+                    android:paddingLeft="@dimen/space_10"
+                    android:textColorHint="@color/colorLoginHint"
+                    android:textSize="@dimen/text_size_12" />
+
+
+                <com.z.baselibrary.ui.viewselector.ButtonSelector
+                    android:id="@+id/register_btn_get_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="获取验证码"
+                    android:textColor="@color/color_white"
+                    app:radius="6dp" />
+
+
+            </LinearLayout>
 
 
             <Button
@@ -54,7 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="@dimen/space_15"
-                android:background="@color/color_red"
+                android:background="@drawable/circle_btn_red"
                 android:text="登录"
                 android:textColor="@color/color_white" />
 
@@ -64,21 +102,23 @@
                 android:layout_marginTop="@dimen/space_10">
 
                 <TextView
-                    android:id="@+id/login_tv_register"
+                    android:id="@+id/login_tv_sms"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:padding="@dimen/space_10"
-                    android:text="注册"
+                    android:text="短信验证码登录"
                     android:textColor="@color/color_black" />
 
                 <TextView
+                    android:id="@+id/login_tv_register"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:padding="@dimen/space_10"
-                    android:text="忘记密码"
+                    android:text="免费注册"
                     android:textColor="@color/color_black" />
+
 
             </FrameLayout>
 

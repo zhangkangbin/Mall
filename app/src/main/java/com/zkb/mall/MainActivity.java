@@ -34,7 +34,7 @@ public class MainActivity extends BaseViewPagerActivity {
 
     @Override
     protected void initData(Bundle savedInstanceState) {
-        ConcurrentLinkedQueue list;
+       // ConcurrentLinkedQueue list;
      //   list.add()
         //CC.registerGlobalInterceptor();
         findViewById(R.id.main_rb_me).setOnClickListener(view -> CC.obtainBuilder("User").build().call());

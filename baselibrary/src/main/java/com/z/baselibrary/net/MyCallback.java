@@ -42,6 +42,7 @@ public abstract class MyCallback<T extends BaseBean> implements Callback<T> {
      */
     public MyCallback(HttpDialogLoading dialogLoading) {
         init(dialogLoading, 0, true);//
+
     }
 
     public MyCallback(HttpDialogLoading dialogLoading, int errorTips) {
@@ -66,6 +67,7 @@ public abstract class MyCallback<T extends BaseBean> implements Callback<T> {
     public void onResponse(Call<T> call, Response<T> response) {
 
         dismissLoading();
+
         if (response != null && response.body() != null) {
             mCode = response.body().getCode();
             if (HttpUtil.HTTP_STATUS_SUCCESS == mCode) {
@@ -159,7 +161,7 @@ public abstract class MyCallback<T extends BaseBean> implements Callback<T> {
     }
 
     private void showLoading() {
-
+        
         if (dialogLoading != null && mIsShowLoading) {
             dialogLoading.showLoading();
         }

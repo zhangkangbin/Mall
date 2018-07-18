@@ -161,6 +161,7 @@ project.apply plugin: 'auto-register'
 project.ext.registerInfoList = [
         [ //自动注册组件
           'scanInterface'             : 'com.billy.cc.core.component.IComponent'
+          , 'scanSuperClasses'        : ['com.z.baselibrary.cc.BaseComponent']
           , 'codeInsertToClassName'   : 'com.billy.cc.core.component.ComponentManager'
           , 'registerMethodName'      : 'registerComponent'
           , 'exclude'                 : [//排除的类，支持正则表达式（包分隔符需要用/表示，不能用.）

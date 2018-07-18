@@ -1,8 +1,10 @@
 package com.zmall.user.login;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.EditText;
 
 import com.z.baselibrary.net.BaseBean;
@@ -32,6 +34,9 @@ public class LoginActivity extends BaseAppCompatActivity {
     private EditText login_edt_name;
     private EditText login_edt_pwd;
 
+    private View login_ll_code;
+    private View login_ll;
+
     @Override
     protected void initView(Bundle savedInstanceState) {
 
@@ -46,9 +51,31 @@ public class LoginActivity extends BaseAppCompatActivity {
             startActivity(new Intent(LoginActivity.this, UserRegisterActivity.class));
         });
 
+
+        login_ll = findViewById(R.id.login_ll);
+
+        login_ll_code = findViewById(R.id.login_ll_code);
+
+        findViewById(R.id.login_tv_sms).setOnClickListener(v->{
+
+
+            if (login_ll_code.getVisibility() == View.VISIBLE) {
+                login_ll_code.setVisibility(View.GONE);
+                login_edt_pwd.setVisibility(View.VISIBLE);
+            } else {
+                login_edt_pwd.setVisibility(View.GONE);
+                login_ll_code.setVisibility(View.VISIBLE);
+            }
+
+            ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(login_ll, "rotationY", 180, 360);
+            objectAnimator.setDuration(1500);
+
+            objectAnimator.start();
+        });
     }
 
     private void userLogin() {
+
         login_edt_name.requestLayout();
         String name = login_edt_name.getText().toString();
         if (TextUtils.isEmpty(name)) {

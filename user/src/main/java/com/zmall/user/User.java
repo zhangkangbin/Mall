@@ -1,9 +1,12 @@
 package com.zmall.user;
 
+import android.content.Context;
 import android.content.Intent;
 
+import com.billy.cc.core.component.AbstractComponent;
 import com.billy.cc.core.component.CC;
 import com.billy.cc.core.component.IComponent;
+import com.z.baselibrary.cc.BaseComponent;
 import com.zmall.user.login.LoginActivity;
 
 import java.util.Map;
@@ -11,21 +14,18 @@ import java.util.Map;
 /**
  * @author zhangkb
  */
-public class User implements IComponent {
+public class User extends BaseComponent {
+
     @Override
     public String getName() {
         return "User";
     }
 
+
     @Override
-    public boolean onCall(CC cc) {
-        Intent intent = new Intent(cc.getContext(), LoginActivity.class);
+    protected boolean onCall(CC cc, Context context) {
 
-    /*    if (cc.getParams() != null || cc.getParams().isEmpty()) {
-
-
-        }*/
-        cc.getContext().startActivity(intent);
+        startActivity(LoginActivity.class);
         return false;
     }
 }
