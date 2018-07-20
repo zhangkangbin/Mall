@@ -6,6 +6,11 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
+import com.z.baselibrary.R;
+
 import java.io.File;
 
 /**
@@ -49,16 +54,14 @@ class GlideImageLoader implements ILoaderProxy {
 
     @Override
     public void displayImage(Context context, String url, ImageView imageView) {
-      /*  //
+
         RequestOptions options = new RequestOptions()
                 .centerCrop()
-                .placeholder(R.mipmap.img_loading_fail)
-                .error(R.mipmap.img_loading_fail)
                 .diskCacheStrategy(DiskCacheStrategy.ALL);
-        Glide.with(MyApplication.getInstance())
+        Glide.with(context)
                 .load(url)
                 .apply(options)
-                .into(imageView);*/
+                .into(imageView);
     }
 
     @Override
@@ -144,7 +147,7 @@ class GlideImageLoader implements ILoaderProxy {
      */
     @Override
     public void preload(Context context, String url) {
-       // Glide.with(context).load(url).preload();
+        // Glide.with(context).load(url).preload();
     }
 
     /**
@@ -154,7 +157,7 @@ class GlideImageLoader implements ILoaderProxy {
      */
     @Override
     public void clearDiskCache(Context context) {
-      //  Glide.get(context).clearDiskCache();
+        //  Glide.get(context).clearDiskCache();
     }
 
     /**
@@ -164,7 +167,7 @@ class GlideImageLoader implements ILoaderProxy {
      */
     @Override
     public void clearMemory(Context context) {
-    //    Glide.get(context).clearMemory();
+        //    Glide.get(context).clearMemory();
     }
 
     /**
@@ -174,7 +177,7 @@ class GlideImageLoader implements ILoaderProxy {
      */
     @Override
     public void clearAllCache(Context context) {
-       // Glide.get(context).clearMemory();
-       // Glide.get(context).clearDiskCache();
+        // Glide.get(context).clearMemory();
+        // Glide.get(context).clearDiskCache();
     }
 }

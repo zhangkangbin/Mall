@@ -8,19 +8,22 @@ import com.z.baselibrary.net.HttpUtil;
 
 
 /**
- * Created by zhangkb on 2018/2/6 0006.
+ *
+ * @author zhangkb
+ * @date 2018/2/6 0006
  */
 
-public class BaseApplication  extends Application {
+public class BaseApplication extends Application {
 
-    private static  BaseApplication application;
+    private static BaseApplication application;
 
+    @Override
     public void onCreate() {
         super.onCreate();
-        this.application=this;
+        application = this;
         HttpUtil.init(this);
-      //  HttpUtil.init(this.getApplicationContext());
-        String id="d221d30451";
+        //  HttpUtil.init(this.getApplicationContext());
+        String id = "d221d30451";
         Bugly.init(getApplicationContext(), id, true);
         CrashReport.initCrashReport(getApplicationContext(), id, false);
 
@@ -28,8 +31,7 @@ public class BaseApplication  extends Application {
     }
 
 
-
-    public static BaseApplication get(){
+    public static BaseApplication get() {
 
         return application;
     }

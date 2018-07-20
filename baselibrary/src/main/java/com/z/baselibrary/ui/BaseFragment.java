@@ -75,6 +75,7 @@ public abstract class BaseFragment extends Fragment implements HttpDialogLoading
 
     }
 
+    @Override
     public void showToast(String text) {
 
         if (TextUtils.isEmpty(text)||getActivity()==null) return;

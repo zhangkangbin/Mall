@@ -3,6 +3,7 @@ package com.z.baselibrary.ui.banner;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -14,8 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
 import com.bumptech.glide.Glide;
 import com.z.baselibrary.R;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -89,10 +92,10 @@ public class ImageCycleView extends LinearLayout {
 
         mContext = context;
         LayoutInflater.from(context).inflate(R.layout.common_cycle_view, this);
-        mAdvPager =  findViewById(R.id.adv_pager);
+        mAdvPager = findViewById(R.id.adv_pager);
         mAdvPager.addOnPageChangeListener(new GuidePageChangeListener());
         // 滚动图片右下指示器视
-        mGroup =  findViewById(R.id.viewGroup);
+        mGroup = findViewById(R.id.viewGroup);
     }
 
     @Override
@@ -193,15 +196,17 @@ public class ImageCycleView extends LinearLayout {
             mImageView.setLayoutParams(params);
             mImageViews[i] = mImageView;
             if (i == 0) {
-                if (this.stype == 1)
+                if (this.stype == 1) {
                     mImageViews[i].setBackgroundResource(R.drawable.banner_dian_focus);
-                else
+                } else {
                     mImageViews[i].setBackgroundResource(R.drawable.cicle_banner_dian_focus);
+                }
             } else {
-                if (this.stype == 1)
+                if (this.stype == 1) {
                     mImageViews[i].setBackgroundResource(R.drawable.banner_dian_blur);
-                else
+                } else {
                     mImageViews[i].setBackgroundResource(R.drawable.cicle_banner_dian_blur);
+                }
             }
             mGroup.addView(mImageViews[i]);
         }
@@ -244,6 +249,7 @@ public class ImageCycleView extends LinearLayout {
     private final int mAtuoPlayTime = 4000;
 
     private Timer myTimer = null;
+
     /**
      * 图片滚动任务
      */
@@ -283,21 +289,21 @@ public class ImageCycleView extends LinearLayout {
         @Override
         public void handleMessage(Message msg) {
             try {
-                if(msg.arg1 == 0) {
+                if (msg.arg1 == 0) {
                     if (mImageViews != null) {
                         int size = mImageViews.length;
 
-                    //    log.logI(TAG, "图片自动轮播Task ::: size= " + size + " ::: currentItem= " + mAdvPager.getCurrentItem());
+                        //    log.logI(TAG, "图片自动轮播Task ::: size= " + size + " ::: currentItem= " + mAdvPager.getCurrentItem());
                         if (mAdvPager.getCurrentItem() + 1 == size) {
                             mAdvPager.setCurrentItem(0);
-                        //    log.logI(TAG, "图片自动轮播Task00");
+                            //    log.logI(TAG, "图片自动轮播Task00");
                         } else {
 
-                      //      log.logI(TAG, "图片自动轮播Task");
+                            //      log.logI(TAG, "图片自动轮播Task");
                             mAdvPager.setCurrentItem(mAdvPager.getCurrentItem() + 1);
                         }
                     }
-                } else if(msg.arg1 == 1) {
+                } else if (msg.arg1 == 1) {
                     int index = msg.arg2;
                     // 设置当前显示的图片
                     // 设置图片滚动指示器背
@@ -310,7 +316,7 @@ public class ImageCycleView extends LinearLayout {
                 }
             } catch (Exception ex) {
                 // TODO: handle exception
-             //   log.logCacheE(TAG, log.getStackMsg("WelcomeTimerHandler", ex));
+                //   log.logCacheE(TAG, log.getStackMsg("WelcomeTimerHandler", ex));
             }
         }
     }
@@ -333,10 +339,10 @@ public class ImageCycleView extends LinearLayout {
 
         @Override
         public void onPageSelected(int index) {
-     //       log.logI(TAG, "GuidePageChangeListener ::: onPageSelected ::: index  1= " + index + " ::: imgs.len= " + mImageViews.length);
+            //       log.logI(TAG, "GuidePageChangeListener ::: onPageSelected ::: index  1= " + index + " ::: imgs.len= " + mImageViews.length);
             //
             index = index % mImageViews.length;
-         //   log.logI(TAG, "GuidePageChangeListener ::: onPageSelected ::: index  2= " + index);
+            //   log.logI(TAG, "GuidePageChangeListener ::: onPageSelected ::: index  2= " + index);
 
             //
             Message message = new Message();
@@ -419,18 +425,15 @@ public class ImageCycleView extends LinearLayout {
 
             } else {
                 imageView = mImageViewCacheList.remove(0);
-              //  log.logI(TAG, "ImageCycleViewListener :::: instantiateItem ::: remove---");
+                //  log.logI(TAG, "ImageCycleViewListener :::: instantiateItem ::: remove---");
             }
             // 设置图片点击监听
-            imageView.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
+            imageView.setOnClickListener(v -> {
 
-                    if (mImageCycleViewListener != null) {
-                        mImageCycleViewListener.onImageClick(position % mAdList.size(), v);
-                    }
-
+                if (mImageCycleViewListener != null) {
+                    mImageCycleViewListener.onImageClick(position % mAdList.size(), v);
                 }
+
             });
             imageView.setBackgroundColor(getResources().getColor(R.color.color_white));
             //设置图片缩放模式
@@ -443,14 +446,15 @@ public class ImageCycleView extends LinearLayout {
         }
 
         @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
+        public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
             ImageView view = (ImageView) object;
             mAdvPager.removeView(view);
             mImageViewCacheList.add(view);
 
         }
 
-        public int getItemPosition(Object object) {
+        @Override
+        public int getItemPosition(@NonNull Object object) {
             return POSITION_NONE;
         }
 
