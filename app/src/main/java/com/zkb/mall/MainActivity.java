@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.View;
 
 import com.billy.cc.core.component.CC;
+import com.billy.cc.core.component.CCResult;
+import com.billy.cc.core.component.IComponentCallback;
 import com.z.baselibrary.ui.BaseViewPagerActivity;
 import com.zkb.mall.ui.HomeFragment;
 
@@ -20,10 +22,17 @@ public class MainActivity extends BaseViewPagerActivity {
 
     @Override
     protected List<Fragment> getFragmentList() {
-        List<Fragment> list=new ArrayList<>();
+        List<Fragment> list = new ArrayList<>();
         list.add(new HomeFragment());
         list.add(new HomeFragment());
-        list.add(new HomeFragment());
+
+
+        Fragment fragment = CC.obtainBuilder("User").setActionName("MyFragment").build().call().getDataItem("MyFragment");
+
+        if (fragment != null) {
+            list.add(fragment);
+
+        }
         return list;
     }
 
@@ -34,10 +43,21 @@ public class MainActivity extends BaseViewPagerActivity {
 
     @Override
     protected void initData(Bundle savedInstanceState) {
-       // ConcurrentLinkedQueue list;
-     //   list.add()
+        // ConcurrentLinkedQueue list;
+        //   list.add()
         //CC.registerGlobalInterceptor();
-        findViewById(R.id.main_rb_me).setOnClickListener(view -> CC.obtainBuilder("User").build().call());
+        findViewById(R.id.main_rb_me).setOnClickListener(view -> CC.obtainBuilder("User").setActionName("login").build().call());
+
+        findViewById(R.id.main_rb_index).setOnClickListener(view -> {
+
+            getViewPager().setCurrentItem(0);
+        });
+
+        findViewById(R.id.main_rb_car).setOnClickListener(view -> {
+
+            getViewPager().setCurrentItem(1);
+        });
+
     }
 
 }

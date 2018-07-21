@@ -1,0 +1,40 @@
+package com.zmall.user;
+
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.z.baselibrary.ui.BaseFragment;
+
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class MyFragment extends BaseFragment {
+
+
+    public MyFragment() {
+        // Required empty public constructor
+    }
+
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.fragment_my;
+    }
+
+    @Override
+    public void initView(View view, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        view.findViewById(R.id.my_iv_name).setOnClickListener(v->{
+
+            startActivity(new Intent(getActivity(),UserInfoActivity.class));
+        });
+
+    }
+
+}
