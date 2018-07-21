@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
-            android:drawableTop="@drawable/ic_search"
+            android:drawableTop="@drawable/ic_liveing"
             android:gravity="center"
             android:text="首页" />
 
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
-            android:drawableTop="@drawable/ic_search"
+            android:drawableTop="@drawable/ic_liveing"
             android:gravity="center"
             android:text="购物车" />
 
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
-            android:drawableTop="@drawable/ic_search"
+            android:drawableTop="@drawable/ic_liveing"
             android:gravity="center"
             android:text="我的" />
     </RadioGroup>

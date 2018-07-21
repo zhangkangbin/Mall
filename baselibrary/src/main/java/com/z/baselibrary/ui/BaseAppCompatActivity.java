@@ -52,17 +52,17 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
      * set toolbar title
      *
      */
-    public Toolbar inittoobar(int titleId) {
+    public Toolbar initToobar(int titleId) {
 
-        return inittoobar(getResources().getString(titleId));
+        return initToobar(getResources().getString(titleId));
     }
 
-    public Toolbar inittoobar(String title) {
+    public Toolbar initToobar(String title) {
 
-        return inittoobar(title, 0);
+        return initToobar(title, 0);
     }
 
-    public Toolbar inittoobar(String title, int id) {
+    public Toolbar initToobar(String title, int id) {
         mToolbar = getToolbar(title, id);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

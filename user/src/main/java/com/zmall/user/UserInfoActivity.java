@@ -15,7 +15,7 @@ public class UserInfoActivity extends BaseAppCompatActivity {
     @Override
     protected void initView(Bundle savedInstanceState) {
 
-        inittoobar("个人信息");
+        initToobar("个人信息");
 
     }
 

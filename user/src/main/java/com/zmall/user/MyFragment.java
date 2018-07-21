@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.z.baselibrary.ui.BaseFragment;
+import com.zmall.user.account.AccountSettingActivity;
 
 
 /**
@@ -32,7 +33,7 @@ public class MyFragment extends BaseFragment {
 
         view.findViewById(R.id.my_iv_name).setOnClickListener(v->{
 
-            startActivity(new Intent(getActivity(),UserInfoActivity.class));
+            startActivity(new Intent(getActivity(),AccountSettingActivity.class));
         });
 
     }
