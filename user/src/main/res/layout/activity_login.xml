@@ -36,8 +36,8 @@
                 android:background="@drawable/circle_layout_white"
                 android:hint="请输入账号"
                 android:paddingLeft="@dimen/space_10"
-                android:textSize="@dimen/text_size_14"
-                android:textColorHint="@color/colorLoginHint" />
+                android:textColorHint="@color/colorLoginHint"
+                android:textSize="@dimen/text_size_14" />
 
             <EditText
                 android:id="@+id/login_edt_pwd"
@@ -46,19 +46,19 @@
                 android:layout_marginTop="@dimen/space_10"
                 android:background="@drawable/circle_layout_white"
                 android:hint="请输入密码"
-                android:textSize="@dimen/text_size_14"
                 android:inputType="textPassword"
                 android:paddingLeft="@dimen/space_10"
-                android:textColorHint="@color/colorLoginHint" />
+                android:textColorHint="@color/colorLoginHint"
+                android:textSize="@dimen/text_size_14" />
 
             <LinearLayout
                 android:id="@+id/login_ll_code"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:visibility="gone"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/space_20"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <EditText
                     android:id="@+id/register_edt_code"

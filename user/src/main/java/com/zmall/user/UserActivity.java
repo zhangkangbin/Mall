@@ -27,8 +27,6 @@ public class UserActivity extends BaseAppCompatActivity {
     @Override
     protected void initData(Bundle savedInstanceState) {
 
-
-
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder().url("http://www.baidu.com")
                 .build();

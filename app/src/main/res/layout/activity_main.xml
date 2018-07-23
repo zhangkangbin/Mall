@@ -8,44 +8,45 @@
     tools:context=".MainActivity">
 
     <android.support.v4.view.ViewPager
-        android:layout_weight="1"
         android:id="@+id/base_viewpager"
         android:layout_width="match_parent"
-        android:layout_height="0px"/>
+        android:layout_height="0px"
+        android:layout_weight="1" />
 
     <RadioGroup
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
-        <RadioButton
-            android:gravity="center"
-            android:layout_weight="1"
-            android:button="@null"
-            android:text="首页"
-            android:id="@+id/main_rb_index"
-            android:drawableTop="@drawable/ic_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <RadioButton
-            android:gravity="center"
-            android:layout_weight="1"
-            android:button="@null"
-            android:id="@+id/main_rb_car"
-            android:text="购物车"
-            android:drawableTop="@drawable/ic_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        android:orientation="horizontal">
 
         <RadioButton
-            android:layout_weight="1"
-            android:gravity="center"
-            android:id="@+id/main_rb_me"
-            android:text="我的"
-            android:button="@null"
-            android:drawableTop="@drawable/ic_search"
+            android:id="@+id/main_rb_index"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/ic_liveing"
+            android:gravity="center"
+            android:text="首页" />
+
+        <RadioButton
+            android:id="@+id/main_rb_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/ic_liveing"
+            android:gravity="center"
+            android:text="购物车" />
+
+        <RadioButton
+            android:id="@+id/main_rb_me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/ic_liveing"
+            android:gravity="center"
+            android:text="我的" />
     </RadioGroup>
 
 

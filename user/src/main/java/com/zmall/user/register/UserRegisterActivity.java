@@ -29,7 +29,7 @@ public class UserRegisterActivity extends BaseAppCompatActivity {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        inittoobar("注册");
+        initToobar("注册");
 
         findViewById(R.id.register_btn_post).setOnClickListener(v -> {
 

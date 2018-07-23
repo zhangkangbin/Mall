@@ -2,6 +2,7 @@ package com.zmall.user;
 
 import android.content.Context;
 import com.billy.cc.core.component.CC;
+import com.billy.cc.core.component.CCResult;
 import com.z.baselibrary.cc.BaseComponent;
 import com.zmall.user.login.LoginActivity;
 
@@ -15,9 +16,23 @@ public class User extends BaseComponent {
         return "User";
     }
 
+
     @Override
     protected boolean onCall(CC cc, Context context) {
-        startActivity(LoginActivity.class);
+
+        switch (cc.getActionName()) {
+
+            case "MyFragment":
+
+                CC.sendCCResult(cc.getCallId(), CCResult.success("MyFragment", new MyFragment()));
+                break;
+
+            default:
+                startActivity(LoginActivity.class);
+                break;
+
+        }
+
         return false;
     }
 }

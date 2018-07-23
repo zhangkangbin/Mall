@@ -29,5 +29,6 @@
     <dimen name="space_20">20dp</dimen>
     <dimen name="space_30">30dp</dimen>
     <dimen name="space_39">39dp</dimen>
+    <dimen name="space_50">50dp</dimen>
     <dimen name="space_100">100dp</dimen>
 </resources>

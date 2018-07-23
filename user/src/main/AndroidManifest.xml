@@ -9,7 +9,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".register.UserRegisterActivity" />
-        <activity android:name=".login.SmsCodeLoginActivity"></activity>
+        <activity android:name=".login.SmsCodeLoginActivity" />
+        <activity android:name=".UserInfoActivity" />
+        <activity android:name=".account.AccountSettingActivity"></activity>
     </application>
 
 </manifest>
