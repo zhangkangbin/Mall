@@ -1,8 +1,10 @@
-package com.zmall.user;
+package com.zmall.user.ui;
 
 import android.os.Bundle;
 import android.view.View;
 import com.z.baselibrary.ui.BaseAppCompatActivity;
+import com.zmall.user.R;
+
 import java.io.IOException;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;

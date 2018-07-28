@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".account.AccountSettingActivity">
+    tools:context=".ui.account.AccountSettingActivity">
 
 
     <LinearLayout
@@ -41,6 +41,7 @@
 
 
         <TextView
+            android:id="@+id/setting_tv_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_10"

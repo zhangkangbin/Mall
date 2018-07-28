@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.z.baselibrary.ui.BaseFragment;
-import com.zmall.user.account.AccountSettingActivity;
+import com.zmall.user.ui.account.AccountSettingActivity;
 
 
 /**

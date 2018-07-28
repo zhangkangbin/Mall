@@ -1,4 +1,4 @@
-package com.zmall.user.login;
+package com.zmall.user.ui.login;
 
 import android.animation.ObjectAnimator;
 import android.content.Intent;
@@ -13,7 +13,7 @@ import com.z.baselibrary.net.MyCallback;
 import com.z.baselibrary.ui.BaseAppCompatActivity;
 import com.zmall.user.R;
 import com.zmall.user.api.UserApi;
-import com.zmall.user.register.UserRegisterActivity;
+import com.zmall.user.ui.register.UserRegisterActivity;
 
 import java.util.HashMap;
 import java.util.Map;

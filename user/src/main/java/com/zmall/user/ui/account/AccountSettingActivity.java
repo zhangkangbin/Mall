@@ -1,12 +1,11 @@
-package com.zmall.user.account;
+package com.zmall.user.ui.account;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.z.baselibrary.ui.BaseAppCompatActivity;
 import com.zmall.user.R;
-import com.zmall.user.UserInfoActivity;
+import com.zmall.user.ui.UserInfoActivity;
 
 public class AccountSettingActivity extends BaseAppCompatActivity {
 
@@ -24,6 +23,13 @@ public class AccountSettingActivity extends BaseAppCompatActivity {
         findViewById(R.id.account_ll_user_info).setOnClickListener(v -> {
 
             startActivity(new Intent(AccountSettingActivity.this, UserInfoActivity.class));
+        });
+
+
+        findViewById(R.id.setting_tv_address).setOnClickListener(v -> {
+
+            startActivity(new Intent(AccountSettingActivity.this, UserInfoActivity.class));
+
         });
 
     }

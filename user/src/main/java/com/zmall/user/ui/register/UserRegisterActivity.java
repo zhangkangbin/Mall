@@ -1,4 +1,4 @@
-package com.zmall.user.register;
+package com.zmall.user.ui.register;
 
 import android.os.Bundle;
 import android.text.TextUtils;

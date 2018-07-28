@@ -4,7 +4,7 @@ import android.content.Context;
 import com.billy.cc.core.component.CC;
 import com.billy.cc.core.component.CCResult;
 import com.z.baselibrary.cc.BaseComponent;
-import com.zmall.user.login.LoginActivity;
+import com.zmall.user.ui.login.LoginActivity;
 
 /**
  * @author zhangkb

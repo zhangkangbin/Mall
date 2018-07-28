@@ -1,21 +1,20 @@
-package com.zmall.user;
+package com.zmall.user.ui.login;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
 import com.z.baselibrary.ui.BaseAppCompatActivity;
+import com.zmall.user.R;
 
-public class UserInfoActivity extends BaseAppCompatActivity {
+public class SmsCodeLoginActivity extends BaseAppCompatActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_user_info;
+        return R.layout.activity_sms_code_login_activity;
     }
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-
-        initToobar("个人信息");
 
     }
 
