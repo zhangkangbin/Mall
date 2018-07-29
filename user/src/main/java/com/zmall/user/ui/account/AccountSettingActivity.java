@@ -28,7 +28,7 @@ public class AccountSettingActivity extends BaseAppCompatActivity {
 
         findViewById(R.id.setting_tv_address).setOnClickListener(v -> {
 
-            startActivity(new Intent(AccountSettingActivity.this, UserInfoActivity.class));
+            startActivity(new Intent(AccountSettingActivity.this, AddressManageActivity.class));
 
         });
 

@@ -12,7 +12,8 @@
         <activity android:name=".ui.login.SmsCodeLoginActivity" />
         <activity android:name=".ui.UserInfoActivity" />
         <activity android:name=".ui.account.AccountSettingActivity" />
-        <activity android:name=".ui.account.AddressManageActivity"></activity>
+        <activity android:name=".ui.account.AddressManageActivity" />
+        <activity android:name=".ui.account.AddAddressActivity"></activity>
     </application>
 
 </manifest>
