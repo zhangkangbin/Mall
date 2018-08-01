@@ -1,6 +1,7 @@
 package com.zmall.user;
 
 import android.content.Context;
+
 import com.billy.cc.core.component.CC;
 import com.billy.cc.core.component.CCResult;
 import com.z.baselibrary.cc.BaseComponent;
@@ -25,6 +26,9 @@ public class User extends BaseComponent {
             case "MyFragment":
 
                 CC.sendCCResult(cc.getCallId(), CCResult.success("MyFragment", new MyFragment()));
+                break;
+            case "UserLogin":
+                startActivity(LoginActivity.class);
                 break;
 
             default:

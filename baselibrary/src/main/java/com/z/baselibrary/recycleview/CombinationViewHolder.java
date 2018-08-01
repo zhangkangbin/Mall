@@ -12,7 +12,9 @@ import com.z.baselibrary.imgage.ImageLoader;
 
 
 /**
- * Created by zhangkangbin on 2016/2/17 14:48.
+ *
+ * @author zhangkangbin
+ * @date 2016/2/17 14:48
  */
 public class CombinationViewHolder extends RecyclerView.ViewHolder {
 
@@ -40,7 +42,7 @@ public class CombinationViewHolder extends RecyclerView.ViewHolder {
     }
 
 
-    public TextView setTextView(int id) {
+    public TextView getTextView(int id) {
         return getView(id);
     }
 

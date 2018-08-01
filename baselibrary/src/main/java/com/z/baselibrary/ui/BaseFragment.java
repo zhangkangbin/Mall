@@ -23,6 +23,7 @@ import com.z.baselibrary.ui.dialog.TipsDialog;
 
 public abstract class BaseFragment extends Fragment implements HttpDialogLoading{
 
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -78,7 +79,9 @@ public abstract class BaseFragment extends Fragment implements HttpDialogLoading
     @Override
     public void showToast(String text) {
 
-        if (TextUtils.isEmpty(text)||getActivity()==null) return;
+        if (TextUtils.isEmpty(text)||getActivity()==null) {
+            return;
+        }
 
         Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
 
@@ -86,7 +89,9 @@ public abstract class BaseFragment extends Fragment implements HttpDialogLoading
 
     @Override
     public void showTipsDialog(String msg) {
-        if (TextUtils.isEmpty(msg)) return;
+        if (TextUtils.isEmpty(msg)) {
+            return;
+        }
         new TipsDialog.Builder(getActivity()).setContentText(msg).show();
     }
 

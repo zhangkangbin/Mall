@@ -18,13 +18,12 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  */
 public class MainActivity extends BaseViewPagerActivity {
 
+    //registerForDebug
     @Override
     protected List<Fragment> getFragmentList() {
         List<Fragment> list = new ArrayList<>();
         list.add(new HomeFragment());
         list.add(new HomeFragment());
-
-
         Fragment fragment = CC.obtainBuilder("User").setActionName("MyFragment").build().call().getDataItem("MyFragment");
 
         if (fragment != null) {

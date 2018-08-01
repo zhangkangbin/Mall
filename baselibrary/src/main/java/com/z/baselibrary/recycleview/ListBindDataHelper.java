@@ -23,7 +23,8 @@ import retrofit2.Call;
 import retrofit2.Response;
 
 /**
- * Created by zhangkb on 2017/11/27 0027.
+ * @author zhangkb
+ * @date 2017/11/27 0027
  */
 
 public class ListBindDataHelper<T extends BaseBean, D> {
@@ -126,50 +127,47 @@ public class ListBindDataHelper<T extends BaseBean, D> {
 
     private void getData(Call<T> call, boolean isInitEmptyData) {
 
-
-    /*    if (call.isExecuted()){
-            recyclerView.onRefreshComplete();
-            return;
-        }*/
-
-
-        if (isInitEmptyData) {
-
+        if (call == null) {
             if (tempData == null) {
-                tempData = new ArrayList<>();
-
+                tempData = listBindDataInterface.getAdapterList(null);
             }
             initAdapter(true);
 
-
-            
             return;
         }
 
 
-        if (isPostIng) return;
+        if (isInitEmptyData) {
+            if (tempData == null) {
+                tempData = new ArrayList<>();
+            }
+            initAdapter(true);
+            return;
+        }
+        if (isPostIng) {
+            return;
+        }
 
         isPostIng = true;
-
-        if (mState == STATE_LOADING_NO_MORE) return;
-
+        if (mState == STATE_LOADING_NO_MORE) {
+            return;
+        }
         //    Logger.getLogger().logD(TAG, "---getData mState---" + mState);
-
 
         call.enqueue(new MyCallback<T>(httpDialogLoading) {
             @Override
             public void onSuccess(Call<T> call, Response<T> response) {
                 isPostIng = false;
                 Log.d(TAG, "---STATE_OK---");
-
-                //     recyclerView.onRefreshComplete();
-
+                //    recyclerView.onRefreshComplete();
                 BaseBean result = response.body();
-                if (result == null) return;
+                if (result == null) {
+                    return;
+                }
 
                 switch (mState) {
-
-                    case STATE_LOADING_RE_FRESH: //刷新
+                    //刷新
+                    case STATE_LOADING_RE_FRESH:
 
                         if (loadMoreView != null) {
                             loadMoreView.setText("正在加载更多....");
@@ -199,7 +197,8 @@ public class ListBindDataHelper<T extends BaseBean, D> {
                                 if (tempData != null && !list.isEmpty()) {
                                     tempData.addAll(list);
                                 }
-                                mState = STATE_LOADING_NO_MORE;//没有更多数据了
+                                //没有更多数据了
+                                mState = STATE_LOADING_NO_MORE;
                                 if (loadMoreView != null) {
                                     loadMoreView.setText("没有更多数据了！");
                                 }
@@ -229,11 +228,7 @@ public class ListBindDataHelper<T extends BaseBean, D> {
 
             }
 
-      /*      @Override
-            public void onFailure(Call<T> call, Throwable t) {
-                super.onFailure(call, t);
-            }
-*/
+
             @Override
             public void onFailure(Call<T> call, Throwable t) {
                 super.onFailure(call, t);
@@ -302,7 +297,9 @@ public class ListBindDataHelper<T extends BaseBean, D> {
                         @Override
                         public void onScrollFooterListtener(RecyclerView recyclerView, int newState) {
                             //  Logger.getLogger().logD(TAG, "---addScrollFooterListtener2---");
-                            if (mState == STATE_LOADING_NO_MORE) return;
+                            if (mState == STATE_LOADING_NO_MORE) {
+                                return;
+                            }
                             mState = STATE_LOADING_MORE;
                             int page = 1;
                             try {
