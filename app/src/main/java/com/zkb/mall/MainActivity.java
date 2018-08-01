@@ -8,6 +8,7 @@ import android.view.View;
 import com.billy.cc.core.component.CC;
 import com.z.baselibrary.ui.BaseViewPagerActivity;
 import com.zkb.mall.ui.HomeFragment;
+import com.zkb.mall.ui.ShoppingCarFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ public class MainActivity extends BaseViewPagerActivity {
     protected List<Fragment> getFragmentList() {
         List<Fragment> list = new ArrayList<>();
         list.add(new HomeFragment());
-        list.add(new HomeFragment());
+        list.add(new ShoppingCarFragment());
         Fragment fragment = CC.obtainBuilder("User").setActionName("MyFragment").build().call().getDataItem("MyFragment");
 
         if (fragment != null) {

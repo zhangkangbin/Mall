@@ -7,7 +7,6 @@ import com.zmall.user.R;
 
 public class AddAddressActivity extends BaseAppCompatActivity {
 
-
     @Override
     protected int getLayoutId() {
         return R.layout.activity_add_address;
