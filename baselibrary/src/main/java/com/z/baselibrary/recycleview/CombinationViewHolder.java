@@ -67,6 +67,7 @@ public class CombinationViewHolder extends RecyclerView.ViewHolder {
             v = mView.findViewById(id);
             mViewArray.put(id, v);
         }
+
         return (T) v;
 
     }
