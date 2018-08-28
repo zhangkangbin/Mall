@@ -27,12 +27,9 @@ public class BaseApplication extends Application {
         Bugly.init(getApplicationContext(), id, true);
         CrashReport.initCrashReport(getApplicationContext(), id, false);
 
-
     }
 
-
     public static BaseApplication get() {
-
         return application;
     }
 }

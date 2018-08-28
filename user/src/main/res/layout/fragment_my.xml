@@ -38,7 +38,7 @@
         android:layout_gravity="center"
         android:layout_margin="@dimen/space_10"
         android:background="@drawable/circle_layout_white"
-        android:src="@drawable/face" />
+        android:src="@drawable/user_face" />
 
     <FrameLayout
         android:layout_width="match_parent"
