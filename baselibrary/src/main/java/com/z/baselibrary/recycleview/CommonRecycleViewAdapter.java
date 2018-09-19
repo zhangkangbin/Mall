@@ -5,12 +5,9 @@ import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
 
 import com.z.baselibrary.R;
 
@@ -18,7 +15,9 @@ import java.util.List;
 
 
 /**
- * Created by zhangkangbin on 2016/2/17 13:58.
+ *
+ * @author zhangkangbin
+ * @date 2016/2/17 13:58
  */
 public abstract class CommonRecycleViewAdapter<T> extends RecyclerView.Adapter<CombinationViewHolder> {
 
@@ -59,7 +58,7 @@ public abstract class CommonRecycleViewAdapter<T> extends RecyclerView.Adapter<C
         this.mContext = parent.getContext();
      /*   CombinationViewHolder holder = new CombinationViewHolder(
                 LayoutInflater.from(context).inflate(R.layout.ad_home_combination, parent, false));*/
-        View view = null;
+        View view ;
 
         if (viewType == TYPE_EMPTY) {
             if (mEmptyView != null) {
@@ -86,6 +85,7 @@ public abstract class CommonRecycleViewAdapter<T> extends RecyclerView.Adapter<C
     }
 
 
+    @Override
     public void onBindViewHolder(CombinationViewHolder holder, int position) {
 
         // holder.setIsRecyclable(IsRecyclable);
@@ -133,6 +133,7 @@ public abstract class CommonRecycleViewAdapter<T> extends RecyclerView.Adapter<C
 
     }
 
+    @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
         this.recyclerView = recyclerView;
@@ -140,9 +141,10 @@ public abstract class CommonRecycleViewAdapter<T> extends RecyclerView.Adapter<C
         if (manager instanceof GridLayoutManager) {
             final GridLayoutManager gridManager = ((GridLayoutManager) manager);
             gridManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                @Override
                 public int getSpanSize(int position) {
                     int type = getItemViewType(position);
-                    return (type == TYPE_FOOTER || type == TYPE_EMPTY) ? gridManager.getSpanCount() : 1;
+                    return (type==TYPE_HEADER ||type == TYPE_FOOTER || type == TYPE_EMPTY) ? gridManager.getSpanCount() : 1;
                 }
             });
         }
@@ -182,12 +184,13 @@ public abstract class CommonRecycleViewAdapter<T> extends RecyclerView.Adapter<C
         this.mEmptyView = mEmptyView;
     }
 
+    @Override
     public int getItemViewType(int position) {
 
         if (list.size() == 0) {
             return TYPE_EMPTY;
         }
-        if (list.size() > 0 && position == 0 && mHeaderView != null) {
+        if (position == 0 && mHeaderView != null) {
             return TYPE_HEADER;
         }
         if (position > 0 && position == list.size() && mFooterView != null) {
@@ -196,17 +199,20 @@ public abstract class CommonRecycleViewAdapter<T> extends RecyclerView.Adapter<C
         return super.getItemViewType(position);
     }
 
+    @Override
     public int getItemCount() {
 
-        if (list == null) return 0;
+        if (list == null) {
+            return 0;
+        }
 
         int count = list.size();
         if (list.size() == 0) {
             count++;
-        } else if (mHeaderView != null && list.size() != 0) {
+        } else if (mHeaderView != null) {
             //   LogUtil.i( "getItemCount ++");
             count++;
-        } else if (mFooterView != null && list.size() != 0) {
+        } else if (mFooterView != null) {
 
             count++;
         }

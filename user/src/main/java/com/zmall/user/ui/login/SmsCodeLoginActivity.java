@@ -1,6 +1,6 @@
 package com.zmall.user.ui.login;
 
-import android.app.Activity;
+
 import android.os.Bundle;
 
 import com.z.baselibrary.ui.BaseAppCompatActivity;

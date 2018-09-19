@@ -22,6 +22,7 @@
             android:label="@string/title_activity_order_confirmation"
             android:theme="@style/AppTheme.Base" />
         <activity android:name=".ui.order.PayCompleteActivity"></activity>
+
     </application>
 
 </manifest>

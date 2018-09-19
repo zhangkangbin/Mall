@@ -5,6 +5,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,7 +42,7 @@ public class ListBindDataHelper<T extends BaseBean, D> {
     private List<D> tempData;
     private Map<String, Object> mMap = new HashMap<>();
     private TextView loadMoreView;
-    private CommonRecycleViewAdapter<D> adapter;
+    private CommonRecycleViewAdapter<D> mAdapter;
 
     private int mAdapterLayoutId;
     private Activity mActivity;
@@ -56,6 +57,7 @@ public class ListBindDataHelper<T extends BaseBean, D> {
     private HttpDialogLoading httpDialogLoading;
     private ListRefreshListener listRefreshListener;
 
+    private View mHeaderView;
 /*
     public ListBindDataHelper(Activity activity, int adapterLayoutId, ListBindDataInterface<T, D> listBindDataInterface) {
 
@@ -269,8 +271,8 @@ public class ListBindDataHelper<T extends BaseBean, D> {
 
 
         if (isInit) {
-            if (adapter == null) {
-                adapter = new CommonRecycleViewAdapter<D>(tempData, mAdapterLayoutId) {
+            if (mAdapter == null) {
+                mAdapter = new CommonRecycleViewAdapter<D>(tempData, mAdapterLayoutId) {
                     @Override
                     public void setData(CombinationViewHolder holder, D t, int position) {
                         listBindDataInterface.bindData(holder, t, position);
@@ -285,46 +287,45 @@ public class ListBindDataHelper<T extends BaseBean, D> {
                     loadMoreView.setPadding(10, 10, 10, 10);
                 }
 
-
                 loadMoreView.setText("正在加载更多....");
 
-                adapter.addFooterView(loadMoreView);
+                if(mHeaderView!=null){
+                    mAdapter.addHeader(mHeaderView);
+                }
+                mAdapter.addFooterView(loadMoreView);
 
-                recyclerView.setAdapter(adapter);
+                recyclerView.setAdapter(mAdapter);
                 if (isLoadMore) {
                     //  Logger.getLogger().logD(TAG, "---addScrollFooterListtener---");
-                    adapter.addScrollFooterListtener(new CommonRecycleViewAdapter.RecyclerViewScrollFooterListener() {
-                        @Override
-                        public void onScrollFooterListtener(RecyclerView recyclerView, int newState) {
-                            //  Logger.getLogger().logD(TAG, "---addScrollFooterListtener2---");
-                            if (mState == STATE_LOADING_NO_MORE) {
-                                return;
-                            }
-                            mState = STATE_LOADING_MORE;
-                            int page = 1;
-                            try {
-                                page = (int) mMap.get(mPage);
-
-                            } catch (Exception e) {
-                                e.printStackTrace();
-
-                            }
-
-                            page++;
-                            //     Logger.getLogger().logD(TAG, "---STATE_LOADING_MORE---------" + page);
-                            mMap.put(mPage, page);
-                            getData(listBindDataInterface.getCall(mMap), false);
+                    mAdapter.addScrollFooterListtener((recyclerView, newState) -> {
+                        //  Logger.getLogger().logD(TAG, "---addScrollFooterListtener2---");
+                        if (mState == STATE_LOADING_NO_MORE) {
+                            return;
                         }
+                        mState = STATE_LOADING_MORE;
+                        int page = 1;
+                        try {
+                            page = (int) mMap.get(mPage);
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+
+                        }
+
+                        page++;
+                        //     Logger.getLogger().logD(TAG, "---STATE_LOADING_MORE---------" + page);
+                        mMap.put(mPage, page);
+                        getData(listBindDataInterface.getCall(mMap), false);
                     });
                 }
             } else {
 
-                adapter.notifyDataSetChanged();
+                mAdapter.notifyDataSetChanged();
             }
 
         } else {
 
-            adapter.notifyDataSetChanged();
+            mAdapter.notifyDataSetChanged();
         }
 
 
@@ -346,9 +347,13 @@ public class ListBindDataHelper<T extends BaseBean, D> {
 
     private void notifyDataSetChanged() {
 
-        if (adapter != null) {
-            adapter.notifyDataSetChanged();
+        if (mAdapter != null) {
+            mAdapter.notifyDataSetChanged();
         }
+    }
+
+    public void  addHeader(View headerView) {
+        this.mHeaderView=headerView;
     }
 
     public void setNeedLoadMore(boolean isLoadMore) {

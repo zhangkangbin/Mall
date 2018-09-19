@@ -3,6 +3,7 @@ package com.zkb.mall.ui;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
@@ -43,10 +44,13 @@ public class HomeFragment extends BaseListFragment<HomeBean, HomeBean.DataBean> 
     public void initData(View view, Bundle savedInstanceState) {
 
 
+        View header=LayoutInflater.from(getActivity()).inflate(R.layout.item_header_home,null);
+        getListBindDataHelper().addHeader(header);
+
         List<String> imageUrlList = new ArrayList<>();
         imageUrlList.add("https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=209531698,2607942925&fm=27&gp=0.jpg");
         imageUrlList.add("https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3877368857,984168879&fm=27&gp=0.jpg");
-        ImageCycleView imageCycleView = view.findViewById(R.id.home_banner);
+        ImageCycleView imageCycleView = header.findViewById(R.id.home_banner);
         imageCycleView.setImageResources(imageUrlList);
         imageCycleView.startImageCycle();
 
