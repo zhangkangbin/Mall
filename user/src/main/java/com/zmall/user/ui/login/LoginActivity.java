@@ -47,16 +47,22 @@ public class LoginActivity extends BaseAppCompatActivity {
         findViewById(R.id.login_btn_start).setOnClickListener(view -> {
             userLogin();
         });
-        findViewById(R.id.login_tv_register).setOnClickListener(view -> {
+        findViewById(R.id.loginBtnRegister).setOnClickListener(view -> {
             startActivity(new Intent(LoginActivity.this, UserRegisterActivity.class));
         });
 
+
+        findViewById(R.id.loginTvForgetPwd).setOnClickListener(view -> {
+
+            startActivity(new Intent(LoginActivity.this, UserRegisterActivity.class));
+
+        });
 
         login_ll = findViewById(R.id.login_ll);
 
         login_ll_code = findViewById(R.id.login_ll_code);
 
-        findViewById(R.id.login_tv_sms).setOnClickListener(v->{
+/*        findViewById(R.id.login_tv_sms).setOnClickListener(v->{
 
 
             if (login_ll_code.getVisibility() == View.VISIBLE) {
@@ -71,7 +77,7 @@ public class LoginActivity extends BaseAppCompatActivity {
             objectAnimator.setDuration(1500);
 
             objectAnimator.start();
-        });
+        });*/
     }
 
     private void userLogin() {

@@ -5,6 +5,7 @@ import android.content.Context;
 import com.billy.cc.core.component.CC;
 import com.billy.cc.core.component.CCResult;
 import com.z.baselibrary.cc.BaseComponent;
+import com.zmall.user.ui.account.AddressManageActivity;
 import com.zmall.user.ui.login.LoginActivity;
 
 /**
@@ -30,7 +31,9 @@ public class User extends BaseComponent {
             case "UserLogin":
                 startActivity(LoginActivity.class);
                 break;
-
+            case "AddressManageActivity":
+                startActivity(AddressManageActivity.class);
+                break;
             default:
                 startActivity(LoginActivity.class);
                 break;

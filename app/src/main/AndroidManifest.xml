@@ -3,12 +3,12 @@
     package="com.zkb.mall">
 
     <application
+        android:name="com.z.baselibrary.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name="com.z.baselibrary.BaseApplication"
         android:theme="@style/AppTheme.Base">
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -17,6 +17,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.order.OrderConfirmationActivity"
+            android:label="@string/title_activity_order_confirmation"
+            android:theme="@style/AppTheme.Base" />
+        <activity android:name=".ui.order.PayCompleteActivity"></activity>
     </application>
 
 </manifest>
