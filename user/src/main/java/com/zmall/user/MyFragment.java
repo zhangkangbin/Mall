@@ -31,7 +31,7 @@ public class MyFragment extends BaseFragment {
     @Override
     public void initView(View view, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        view.findViewById(R.id.my_iv_name).setOnClickListener(v->{
+        view.findViewById(R.id.myIvFace).setOnClickListener(v->{
 
             startActivity(new Intent(getActivity(),AccountSettingActivity.class));
         });

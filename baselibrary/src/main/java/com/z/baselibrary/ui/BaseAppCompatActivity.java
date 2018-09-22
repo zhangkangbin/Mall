@@ -76,7 +76,7 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
 
     }
 
-    private TextView toolbar_title;
+
 
     public Toolbar getToolbar(String title, int id) {
 
@@ -95,23 +95,7 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
 
                 mToolbar.setNavigationIcon(id);
             }
-
-
-        }
-        if (toolbar_title == null) {
-            toolbar_title =  findViewById(R.id.toolbar_title);
-        }
-        if (TextUtils.isEmpty(title)) {
-
-            if (toolbar_title != null) {
-                toolbar_title.setText("");
-            }
-
-        } else {
-
-            if (toolbar_title != null) {
-                toolbar_title.setText(title);
-            }
+            mToolbar.setTitle(title);
 
         }
 

@@ -46,18 +46,29 @@ public class MainActivity extends BaseViewPagerActivity {
         // ConcurrentLinkedQueue list;
         //   list.add()
         //CC.registerGlobalInterceptor();
-        findViewById(R.id.main_rb_me).setOnClickListener(view -> CC.obtainBuilder("User").setActionName("login").build().call());
+       // findViewById(R.id.main_rb_me).setOnClickListener(view -> CC.obtainBuilder("User").setActionName("login").build().call());
 
         findViewById(R.id.main_rb_index).setOnClickListener(view -> {
 
             getViewPager().setCurrentItem(0);
         });
 
-        findViewById(R.id.main_rb_car).setOnClickListener(view -> {
+
+        findViewById(R.id.main_rb_type).setOnClickListener(view -> {
 
             getViewPager().setCurrentItem(1);
         });
 
+
+        findViewById(R.id.main_rb_car).setOnClickListener(view -> {
+
+            getViewPager().setCurrentItem(2);
+        });
+
+        findViewById(R.id.main_rb_me).setOnClickListener(view -> {
+
+            getViewPager().setCurrentItem(3);
+        });
     }
 
 }
