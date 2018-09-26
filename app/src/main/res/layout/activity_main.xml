@@ -14,10 +14,10 @@
         android:layout_weight="1" />
 
     <RadioGroup
-        android:padding="@dimen/space_8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="@dimen/space_8">
 
         <RadioButton
             android:id="@+id/main_rb_index"
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
-            android:drawableTop="@drawable/main_rb_my_select_ic"
+            android:drawableTop="@drawable/main_rb_my_select"
             android:gravity="center"
             android:text="我的"
             android:textColor="@drawable/main_rb_text_select"
