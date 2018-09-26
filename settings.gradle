@@ -1,1 +1,1 @@
-include ':app',':baselibrary', ':user' ,':autoregister'
+include ':app',':baselibrary', ':user', ':order' ,':autoregister'

@@ -22,7 +22,7 @@
         <!--背景颜色-->
         <item name="android:windowBackground">@color/windowBg</item>
 
-        <item name="android:textColorHighlight">#FF9800</item>
+        <item name="android:textColorHighlight">#fff76363</item>
 
         <!--
 

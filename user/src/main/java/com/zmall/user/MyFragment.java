@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.billy.cc.core.component.CC;
 import com.z.baselibrary.ui.BaseFragment;
 import com.zmall.user.ui.account.AccountSettingActivity;
 
@@ -31,10 +32,16 @@ public class MyFragment extends BaseFragment {
     @Override
     public void initView(View view, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        view.findViewById(R.id.myIvFace).setOnClickListener(v->{
+        view.findViewById(R.id.myIvFace).setOnClickListener(v -> {
 
-            startActivity(new Intent(getActivity(),AccountSettingActivity.class));
+            startActivity(new Intent(getActivity(), AccountSettingActivity.class));
         });
+
+        view.findViewById(R.id.myOrderAll).setOnClickListener(v -> {
+
+            CC.obtainBuilder("order").build().call();
+        });
+
 
     }
 
