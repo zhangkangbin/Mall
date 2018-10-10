@@ -43,7 +43,7 @@ public class Titlebar extends FrameLayout {
     private void init(Context context, AttributeSet attrs) {
 
 
-        if (context == null || attrs == null) return;
+/*        if (context == null || attrs == null) return;
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.Titlebar);//从xml那传来的一组值
         //选中
@@ -62,7 +62,7 @@ public class Titlebar extends FrameLayout {
         toolbar_relative_layout.setBackgroundColor(bgColor);
         addView(view);
 
-        typedArray.recycle();
+        typedArray.recycle();*/
 
     }
 

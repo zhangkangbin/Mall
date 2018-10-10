@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.order.OrderConfirmationActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <include layout="@layout/include_toolbar" />
+
+        <RelativeLayout
+            android:id="@+id/orderRlAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:orientation="vertical"
+            android:padding="@dimen/space_15">
+
+            <TextView
+                android:id="@+id/orderTvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="张三" />
+
+            <TextView
+                android:id="@+id/orderTvPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_15"
+                android:layout_toRightOf="@+id/orderTvName"
+                android:text="1123345" />
+
+            <TextView
+                android:id="@+id/orderTvAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/orderTvName"
+                android:layout_marginTop="@dimen/space_6"
+                android:text="广东省深圳市南山区建设路XXX号" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/item_go" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/order_address_line" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:padding="@dimen/space_10"
+            android:text="商品信息" />
+
+        <View style="@style/h_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:padding="@dimen/space_10">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@color/refresh_orange"
+                android:src="@drawable/order_address_line" />
+
+
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_10"
+            android:background="@color/color_white"
+            android:orientation="horizontal"
+            android:padding="@dimen/space_10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="商品合计" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="商品合计" />
+
+        </FrameLayout>
+
+        <View style="@style/h_line" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:orientation="horizontal"
+            android:padding="@dimen/space_10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="运费" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="10" />
+
+        </FrameLayout>
+
+        <View style="@style/h_line" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:orientation="horizontal"
+            android:padding="@dimen/space_10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="商品合计" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="商品合计" />
+
+        </FrameLayout>
+
+        <View style="@style/h_line" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_10"
+            android:background="@color/color_white"
+            android:orientation="horizontal"
+            android:padding="@dimen/space_10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="商品合计" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="商品合计" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_white"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/space_10"
+            android:layout_weight="1"
+            android:text="应付金额：128.00元 " />
+
+
+        <TextView
+            android:id="@+id/orderTvPost"
+            android:layout_width="99dp"
+            android:layout_height="match_parent"
+            android:background="@color/color_red"
+            android:gravity="center"
+            android:text="提交订单"
+            android:textColor="@color/color_white" />
+
+
+    </LinearLayout>
+</RelativeLayout>

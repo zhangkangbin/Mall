@@ -20,13 +20,21 @@ public abstract class BaseTabLayoutPager extends BaseViewPagerActivity {
 
         TabLayoutPagerAdapter viewPagerFragmentAdapter = new TabLayoutPagerAdapter(getSupportFragmentManager(), getFragmentList(), getTitiList());
         getViewPager().setAdapter(viewPagerFragmentAdapter);
-
-        TabLayout tabLayout = findViewById(R.id.base_tablayout);
-        tabLayout.setupWithViewPager(getViewPager());
-        tabLayout.setTabMode(TabLayout.MODE_FIXED);
+        getTabLayout();
 
     }
 
 
-    abstract  public List<String> getTitiList();
+    public TabLayout getTabLayout() {
+        TabLayout tabLayout = findViewById(R.id.base_tablayout);
+        tabLayout.setupWithViewPager(getViewPager());
+        tabLayout.setTabMode(TabLayout.MODE_FIXED);
+        return tabLayout;
+
+    }
+    @Override
+    protected int getLayoutId() {
+        return R.layout.base_tablayout;
+    }
+    abstract public List<String> getTitiList();
 }
