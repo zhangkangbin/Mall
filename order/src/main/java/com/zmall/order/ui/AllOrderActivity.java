@@ -11,12 +11,12 @@ public class AllOrderActivity extends BaseTabLayoutPager {
     @Override
     protected void initView(Bundle savedInstanceState) {
         super.initView(savedInstanceState);
-
         initToobar("全部订单");
     }
 
     @Override
     public List<String> getTitiList() {
+
         List<String> list = new ArrayList<>();
         list.add("全部");
         list.add("待付款");
