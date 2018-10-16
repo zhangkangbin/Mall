@@ -32,6 +32,8 @@ public class ShoppingCarFragment extends BaseListFragment<BaseList, BaseList.Pro
 
     @Override
     protected RecyclerView getRecyclerView(View view) {
+
+
         return view.findViewById(R.id.recycler_view);
     }
 

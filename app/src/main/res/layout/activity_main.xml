@@ -67,6 +67,8 @@
             android:text="我的"
             android:textColor="@drawable/main_rb_text_select"
             android:textSize="@dimen/text_size_12" />
+
+
     </RadioGroup>
 
 
