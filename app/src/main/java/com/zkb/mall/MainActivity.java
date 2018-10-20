@@ -68,6 +68,8 @@ public class MainActivity extends BaseViewPagerActivity {
         findViewById(R.id.main_rb_me).setOnClickListener(view -> {
 
             getViewPager().setCurrentItem(3);
+
+            CC.obtainBuilder("GoodsComponent").setActionName("GoodsDetail").build().call();
         });
     }
 

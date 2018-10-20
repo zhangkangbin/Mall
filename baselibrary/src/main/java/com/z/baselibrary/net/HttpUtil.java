@@ -30,7 +30,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class HttpUtil {
 
 
-    public final static int HTTP_STATUS_SUCCESS = 1000;
+    public final static int HTTP_STATUS_SUCCESS = 200;
     public final static int HTTP_STATUS_LOGIN_FAIL = 1010;//登录过期
     public final static int HTTP_STATUS_NO_PERMISSION = 1011;//无权限
 
@@ -146,7 +146,7 @@ public class HttpUtil {
      *
      * @return url
      */
-    public static final String baseUrl = "https://test.com";
+    public static final String baseUrl = "http://39.108.132.70/";
 
     public static String getHeadUrl() {
 
