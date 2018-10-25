@@ -29,4 +29,8 @@
 
     <color name="windowBg">#F5F5F5</color>
     <color name="refresh_orange">#FF9800</color>
+
+    <color name="color_ffff4b5a">#ffff4b5a</color>
+
+
 </resources>

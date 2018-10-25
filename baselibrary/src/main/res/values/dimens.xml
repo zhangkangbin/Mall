@@ -33,4 +33,5 @@
     <dimen name="space_48">48dp</dimen>
     <dimen name="space_50">50dp</dimen>
     <dimen name="space_100">100dp</dimen>
+    <dimen name="space_150">100dp</dimen>
 </resources>
