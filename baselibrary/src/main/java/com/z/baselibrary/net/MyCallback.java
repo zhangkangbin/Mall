@@ -142,7 +142,9 @@ public abstract class MyCallback<T extends BaseBean> implements Callback<T> {
 
     private void showMessage(String msg) {
 
-        if (TextUtils.isEmpty(msg)) return;
+        if (TextUtils.isEmpty(msg)) {
+            return;
+        }
 
         switch (mErrorTips) {
             case TIPS_TOAST: //1

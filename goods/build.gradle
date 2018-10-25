@@ -3,6 +3,8 @@ apply from: '../cc-settings.gradle'
 android {
     compileSdkVersion 27
 
+
+
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 27
@@ -36,3 +38,4 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(path: ':baselibrary')
 }
+

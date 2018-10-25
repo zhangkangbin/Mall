@@ -11,14 +11,21 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.z.baselibrary.log.LogUtils;
+import com.z.baselibrary.net.HttpUtil;
+import com.z.baselibrary.net.MyCallback;
 import com.z.baselibrary.recycleview.CombinationViewHolder;
 import com.z.baselibrary.recycleview.CommonRecycleViewAdapter;
 import com.z.baselibrary.ui.BaseFragment;
 import com.zkb.mall.R;
+import com.zkb.mall.api.HomeApi;
+import com.zkb.mall.bean.ClassTypeBean;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import retrofit2.Call;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,84 +44,84 @@ public class ProductTypeFragment extends BaseFragment {
         return R.layout.fragment_product_type;
     }
 
+    private List<String> mSubTypeList = new ArrayList<>();
+    private CommonRecycleViewAdapter<ClassTypeBean.DataBean.RecommendedClassBean> productAdapter;
+
+    private RecyclerView mProductRVType;
+    private RecyclerView mProductTypeList;
+
     @Override
     public void initView(View view, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        mProductRVType = view.findViewById(R.id.product_rl_type);
+        mProductRVType.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        initProductType(view);
-        initProductList(view);
+        mProductTypeList = view.findViewById(R.id.product_rl_list);
+        mProductTypeList.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+
+        initList();
 
     }
 
 
-    private void initProductType(View view) {
-        RecyclerView productRlType = view.findViewById(R.id.product_rl_type);
-        productRlType.setLayoutManager(new LinearLayoutManager(getActivity()));
+    private void initProductType(List<ClassTypeBean.DataBean.GoodsClassListBean> productTypeList) {
+/*        List<String> productTypeList = new ArrayList<>();
+        for(ClassTypeBean.DataBean.GoodsClassListBean list:listBeans){
+            productTypeList.add(list.getClassDes());
+        }*/
 
-        List<String> typeList = new ArrayList<>();
-        typeList.add("A");
-        typeList.add("B");
-        typeList.add("C");
-        typeList.add("D");
-        typeList.add("A");
-        typeList.add("B");
-        typeList.add("C");
-        typeList.add("D");
-        typeList.add("A");
-        typeList.add("B");
-        typeList.add("C");
-        typeList.add("D");
-        typeList.add("A");
-        typeList.add("B");
-        typeList.add("C");
-        typeList.add("D");
-        final CommonRecycleViewAdapter<String> typeAdapter = new CommonRecycleViewAdapter<String>(typeList, R.layout.adapter_product_type) {
+        final CommonRecycleViewAdapter<ClassTypeBean.DataBean.GoodsClassListBean> typeAdapter =
+                new CommonRecycleViewAdapter<ClassTypeBean.DataBean.GoodsClassListBean>(productTypeList, R.layout.adapter_product_type) {
+                    @Override
+                    public void setData(CombinationViewHolder holder, ClassTypeBean.DataBean.GoodsClassListBean data, int position) {
+
+                        holder.setTextView(R.id.type, data.getClassDes()).setOnClickListener(v -> {
+                            LogUtils.getInstance().d("data.getClassDes():" + data.getClassDes());
+                            //  initData(s);
+                            // initProductList(view);
+                            getSubTypeList(data.getClassNo());
+                        });
+                    }
+                };
+
+        mProductRVType.setAdapter(typeAdapter);
+    }
+
+
+    private void initSubProductList(List<ClassTypeBean.DataBean.RecommendedClassBean> recommendedClass) {
+
+        productAdapter = new CommonRecycleViewAdapter<ClassTypeBean.DataBean.RecommendedClassBean>(recommendedClass, R.layout.adapter_product_type) {
             @Override
-            public void setData(CombinationViewHolder holder, String s, int position) {
-
-                holder.setTextView(R.id.type, s).setOnClickListener(v -> {
-
-                    LogUtils.getInstance().d("s:" + s);
-                    initData(s);
-
-                    initProductList(view);
-
-                });
+            public void setData(CombinationViewHolder holder, ClassTypeBean.DataBean.RecommendedClassBean s, int position) {
+                holder.setText(R.id.type, s.getClassDes());
             }
         };
 
-        productRlType.setAdapter(typeAdapter);
+        mProductTypeList.setAdapter(productAdapter);
     }
 
-    private void initData(String string) {
-        typeList.clear();
+    private void initList() {
 
-        Random rand = new Random();
-        for (int i = 0; i < (50 + rand.nextInt(60)); i++) {
-
-            typeList.add(i + string);
-        }
-
-    }
-
-    private List<String> typeList = new ArrayList<>();
-    CommonRecycleViewAdapter<String> productAdapter;
-    RecyclerView productTypeList;
-
-    private void initProductList(View view) {
-
-
-        productTypeList = view.findViewById(R.id.product_rl_list);
-        productTypeList.setLayoutManager(new GridLayoutManager(getActivity(), 3));
-
-
-        productAdapter = new CommonRecycleViewAdapter<String>(typeList, R.layout.adapter_product_type) {
+        HttpUtil.getRetrofit().create(HomeApi.class).getClassTypeList().enqueue(new MyCallback<ClassTypeBean>() {
             @Override
-            public void setData(CombinationViewHolder holder, String s, int position) {
-                holder.setText(R.id.type, s);
-            }
-        };
+            public void onSuccess(Call<ClassTypeBean> call, Response<ClassTypeBean> response) {
 
-        productTypeList.setAdapter(productAdapter);
+                initProductType(response.body().getData().getGoodsClassList());
+
+                initSubProductList(response.body().getData().getRecommendedClass());
+            }
+        });
+
+    }
+
+    private void getSubTypeList(String superClassNo) {
+
+        HttpUtil.getRetrofit().create(HomeApi.class).getClassSubTypeList(superClassNo).enqueue(new MyCallback<ClassTypeBean>() {
+            @Override
+            public void onSuccess(Call<ClassTypeBean> call, Response<ClassTypeBean> response) {
+
+            }
+        });
+
     }
 }

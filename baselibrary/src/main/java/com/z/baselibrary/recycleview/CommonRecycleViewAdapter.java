@@ -24,6 +24,7 @@ public abstract class CommonRecycleViewAdapter<T> extends RecyclerView.Adapter<C
     /**
      * list 列表请求数量
      */
+    public final  int DATA_SIZES = 10;
     public final static int DATA_SIZE = 10;
     public final static String DATA_SIZE_STRING = String.valueOf(DATA_SIZE);//list 列表请求数量
     private static final String TAG = "CommonRecycleViewAdapter";
@@ -43,7 +44,6 @@ public abstract class CommonRecycleViewAdapter<T> extends RecyclerView.Adapter<C
     public CommonRecycleViewAdapter(List<T> list, int layout) {
         this.list = list;
         this.layout = layout;
-
 
     }
 

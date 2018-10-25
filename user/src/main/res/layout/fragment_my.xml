@@ -20,7 +20,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/space_15"
             android:background="@drawable/circle_layout_white"
-            android:src="@drawable/face" />
+            android:src="@drawable/test_img" />
 
 
         <LinearLayout

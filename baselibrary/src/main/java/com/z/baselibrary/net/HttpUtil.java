@@ -148,6 +148,7 @@ public class HttpUtil {
      */
     public static final String baseUrl = "http://39.108.132.70/";
 
+
     public static String getHeadUrl() {
 
         if (!Config.getConfig().isDebug()) {
