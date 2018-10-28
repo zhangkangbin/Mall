@@ -1,11 +1,11 @@
-package com.zkb.mall.ui.order;
+package com.zmall.home.ui.order;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.billy.cc.core.component.CC;
 import com.z.baselibrary.ui.BaseAppCompatActivity;
-import com.zkb.mall.R;
+import com.zmall.home.R;
 
 public class OrderConfirmationActivity extends BaseAppCompatActivity {
 

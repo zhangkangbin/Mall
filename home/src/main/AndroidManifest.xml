@@ -1,0 +1,16 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zmall.home" >
+
+
+    <application>
+        <activity android:name="com.zmall.home.ui.IndexActivity"/>
+        <activity
+            android:name="com.zmall.home.ui.order.OrderConfirmationActivity"
+            android:label="@string/title_activity_order_confirmation"
+            android:theme="@style/AppTheme.Base" />
+        <activity android:name="com.zmall.home.ui.order.PayCompleteActivity"></activity>
+    </application>
+
+</manifest>
+
+

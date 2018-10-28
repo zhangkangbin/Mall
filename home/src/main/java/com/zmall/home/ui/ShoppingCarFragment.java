@@ -1,4 +1,4 @@
-package com.zkb.mall.ui;
+package com.zmall.home.ui;
 
 
 import android.content.Intent;
@@ -12,8 +12,9 @@ import android.view.ViewGroup;
 import com.z.baselibrary.recycleview.CombinationViewHolder;
 import com.z.baselibrary.test.BaseList;
 import com.z.baselibrary.ui.BaseListFragment;
-import com.zkb.mall.R;
-import com.zkb.mall.ui.order.OrderConfirmationActivity;
+import com.zmall.home.R;
+import com.zmall.home.ui.order.OrderConfirmationActivity;
+
 
 import java.util.List;
 import java.util.Map;

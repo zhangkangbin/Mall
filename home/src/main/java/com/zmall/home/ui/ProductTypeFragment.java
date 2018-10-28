@@ -1,4 +1,4 @@
-package com.zkb.mall.ui;
+package com.zmall.home.ui;
 
 
 import android.os.Bundle;
@@ -14,7 +14,8 @@ import com.z.baselibrary.log.LogUtils;
 import com.z.baselibrary.recycleview.CombinationViewHolder;
 import com.z.baselibrary.recycleview.CommonRecycleViewAdapter;
 import com.z.baselibrary.ui.BaseFragment;
-import com.zkb.mall.R;
+import com.zmall.home.R;
+
 
 import java.util.ArrayList;
 import java.util.List;
