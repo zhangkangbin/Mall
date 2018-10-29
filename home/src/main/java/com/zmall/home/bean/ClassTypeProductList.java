@@ -1,4 +1,4 @@
-package com.zkb.mall.bean;
+package com.zmall.home.bean;
 
 import com.z.baselibrary.net.BaseBean;
 

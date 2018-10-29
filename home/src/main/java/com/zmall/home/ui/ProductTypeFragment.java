@@ -16,13 +16,15 @@ import com.z.baselibrary.net.MyCallback;
 import com.z.baselibrary.recycleview.CombinationViewHolder;
 import com.z.baselibrary.recycleview.CommonRecycleViewAdapter;
 import com.z.baselibrary.ui.BaseFragment;
-import com.zkb.mall.R;
-import com.zkb.mall.api.HomeApi;
-import com.zkb.mall.bean.ClassTypeBean;
+
+import com.zmall.home.R;
+import com.zmall.home.api.HomeApi;
+import com.zmall.home.bean.ClassTypeBean;
+
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+
 
 import retrofit2.Call;
 import retrofit2.Response;

@@ -1,7 +1,8 @@
-package com.zkb.mall.api;
+package com.zmall.home.api;
 
-import com.zkb.mall.bean.ClassTypeBean;
-import com.zkb.mall.bean.ClassTypeProductList;
+
+import com.zmall.home.bean.ClassTypeBean;
+import com.zmall.home.bean.ClassTypeProductList;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
