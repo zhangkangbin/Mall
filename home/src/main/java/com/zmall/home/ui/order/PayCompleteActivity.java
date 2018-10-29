@@ -1,9 +1,10 @@
-package com.zkb.mall.ui.order;
+package com.zmall.home.ui.order;
 
 import android.os.Bundle;
 
 import com.z.baselibrary.ui.BaseAppCompatActivity;
-import com.zkb.mall.R;
+import com.zmall.home.R;
+
 
 public class PayCompleteActivity extends BaseAppCompatActivity {
 

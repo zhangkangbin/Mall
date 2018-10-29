@@ -1,4 +1,4 @@
-package com.zkb.mall.bean;
+package com.zmall.home.bean;
 
 import com.z.baselibrary.net.BaseBean;
 
@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * @author zhangkb
  */
-public class HomeBean  extends BaseBean{
+public class HomeBean extends BaseBean{
 
     public List<DataBean> getList() {
         return list;

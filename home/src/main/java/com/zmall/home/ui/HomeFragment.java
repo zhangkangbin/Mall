@@ -1,18 +1,17 @@
-package com.zkb.mall.ui;
+package com.zmall.home.ui;
 
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TextView;
 
 import com.billy.cc.core.component.CC;
 import com.z.baselibrary.recycleview.CombinationViewHolder;
 import com.z.baselibrary.ui.BaseListFragment;
 import com.z.baselibrary.ui.banner.ImageCycleView;
-import com.zkb.mall.R;
-import com.zkb.mall.bean.HomeBean;
+import com.zmall.home.R;
+import com.zmall.home.bean.HomeBean;
 
 import java.util.ArrayList;
 import java.util.List;
