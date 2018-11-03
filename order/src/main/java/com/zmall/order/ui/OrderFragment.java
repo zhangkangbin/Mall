@@ -1,6 +1,7 @@
 package com.zmall.order.ui;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -149,6 +150,12 @@ public class OrderFragment extends BaseListFragment<AllOrderBean, AllOrderBean.D
     }
 
     private void cancelOrder(String orderId) {
+
+        Intent intent = new Intent();
+        intent.setClass(getActivity(), OrderDetailActivity.class);
+        intent.putExtra("orderId", orderId);
+        startActivity(intent);
+
         Map<String, Object> params = new HashMap<>();
         params.put("orderId", orderId);
         params.put("remark", "买多了");
