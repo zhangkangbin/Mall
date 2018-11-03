@@ -69,7 +69,7 @@ public class HomeFragment extends BaseListFragment<HomeBean, HomeBean.DataBean> 
 
         for (int i = 0; i < 100; i++) {
             HomeBean.DataBean dataBean = new HomeBean.DataBean();
-            dataBean.setPirce(i + ".00 元");
+          //  dataBean.setPirce(i + ".00 元");
             list.add(dataBean);
         }
 
@@ -80,7 +80,7 @@ public class HomeFragment extends BaseListFragment<HomeBean, HomeBean.DataBean> 
     @Override
     public void bindData(CombinationViewHolder holder, HomeBean.DataBean t, int position) {
 
-        holder.setTextView(R.id.price,t.getPirce());
+    //    holder.setTextView(R.id.price,t.getPirce());
         holder.getView(R.id.img_product).setOnClickListener(v -> CC.obtainBuilder("User").setActionName("UserLogin").build().call());
     }
 
