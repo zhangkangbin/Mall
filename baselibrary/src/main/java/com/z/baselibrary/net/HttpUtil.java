@@ -130,11 +130,11 @@ public class HttpUtil {
     }
 
 
-    public static Retrofit.Builder getRetrofitBuiler() {
-        return getRetrofitBuiler(mBaseUrl);
+    public static Retrofit.Builder getRetrofitBuilder() {
+        return getRetrofitBuilder(mBaseUrl);
     }
 
-    public static Retrofit.Builder getRetrofitBuiler(String baseUrl) {
+    public static Retrofit.Builder getRetrofitBuilder(String baseUrl) {
         Retrofit.Builder builder = new Retrofit.Builder();
         builder.baseUrl(baseUrl);
 
