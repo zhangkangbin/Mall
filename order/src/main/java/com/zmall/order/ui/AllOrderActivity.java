@@ -29,11 +29,11 @@ public class AllOrderActivity extends BaseTabLayoutPager {
     @Override
     protected List<Fragment> getFragmentList() {
         List<Fragment> list = new ArrayList<>();
-        list.add(new OrderFragment());
-        list.add(new OrderFragment());
-        list.add(new OrderFragment());
-        list.add(new OrderFragment());
-        list.add(new OrderFragment());
+        list.add(OrderFragment.newInstance("0"));
+        list.add(OrderFragment.newInstance("1"));
+        list.add(OrderFragment.newInstance("4"));
+        list.add(OrderFragment.newInstance("5"));
+        list.add(OrderFragment.newInstance("6"));
         return list;
     }
 

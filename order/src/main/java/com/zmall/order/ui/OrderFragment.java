@@ -10,52 +10,64 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import com.z.baselibrary.net.BaseBean;
+import com.z.baselibrary.net.HttpUtil;
+import com.z.baselibrary.net.MyCallback;
 import com.z.baselibrary.recycleview.CombinationViewHolder;
-import com.z.baselibrary.test.BaseList;
 import com.z.baselibrary.ui.BaseListFragment;
 import com.zmall.order.R;
+import com.zmall.order.api.OrderApi;
+import com.zmall.order.bean.AllOrderBean;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import retrofit2.Call;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class OrderFragment extends BaseListFragment<BaseList, BaseList.ProductList> {
+public class OrderFragment extends BaseListFragment<AllOrderBean, AllOrderBean.DataBean> {
 
+    /**
+     * 状态：1、未付款，2、已付款，3、未发货，4、已发货，5、交易成功，6、交易关闭 ，7-退货申请，8-退货中，9-已退货，‘A’ -退款申请，B’ -退款中，‘C’ -已退款，‘D’-失效',
+     */
 
     public OrderFragment() {
         // Required empty public constructor
     }
 
+    public static OrderFragment newInstance(String orderStatus) {
+
+        Bundle args = new Bundle();
+        args.putString("OrderStatus", orderStatus);
+        OrderFragment fragment = new OrderFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     protected RecyclerView getRecyclerView(View view) {
 
-       FrameLayout frameLayout = view.findViewById(R.id.orderFl);
+        FrameLayout frameLayout = view.findViewById(R.id.orderFl);
         RecyclerView recyclerView = new RecyclerView(getActivity());
         recyclerView.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.MATCH_PARENT));
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         frameLayout.addView(recyclerView);
         return recyclerView;
 
-    //    return view.findViewById(R.id.recycler_view);
+        //    return view.findViewById(R.id.recycler_view);
 
     }
 
     @Override
     public void initData(View view, Bundle savedInstanceState) {
 
+
     }
 
-
-/*    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_order, container, false);
-    }*/
 
     @Override
     public int getLayoutId() {
@@ -68,17 +80,48 @@ public class OrderFragment extends BaseListFragment<BaseList, BaseList.ProductLi
     }
 
     @Override
-    public List<BaseList.ProductList> getAdapterList(BaseList result) {
-        return result.getTestList();
+    public List<AllOrderBean.DataBean> getAdapterList(AllOrderBean result) {
+        return result.getData();
     }
 
     @Override
-    public void bindData(CombinationViewHolder holder, BaseList.ProductList t, int position) {
+    public void bindData(CombinationViewHolder holder, AllOrderBean.DataBean data, int position) {
 
+        holder.setText(R.id.orderTvOrderNo, "订单号：" + data.getOrderId());
+        holder.setText(R.id.orderTvPayPrice, data.getDealSum());
+        holder.setText(R.id.orderTvStatus, data.getDataStateStr());
+
+        holder.getView(R.id.orderBtnCancel).setOnClickListener(view -> {
+            cancelOrder(data.getOrderId());
+
+        });
+
+
+    }
+
+    private void cancelOrder(String orderId) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("orderId", orderId);
+        params.put("remark", "买多了");
+        params.put("afState", "0");
+
+        HttpUtil.getRetrofit().create(OrderApi.class).cancelOrder(params).enqueue(new MyCallback<BaseBean>() {
+            @Override
+            public void onSuccess(Call<BaseBean> call, Response<BaseBean> response) {
+
+            }
+        });
     }
 
     @Override
-    public Call<BaseList> getCall(Map<String, Object> map) {
-        return null;
+    public Call<AllOrderBean> getCall(Map<String, Object> map) {
+
+        String status = getArguments().getString("OrderStatus", "0");
+        Map<String, Object> params = new HashMap<>();
+        params.put("dataState", status);
+
+        return HttpUtil.getRetrofit().create(OrderApi.class).getOrderInfoList(params);
     }
+
+
 }

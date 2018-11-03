@@ -23,7 +23,7 @@ public class IndexActivity extends BaseViewPagerActivity {
     protected List<Fragment> getFragmentList() {
         List<Fragment> list = new ArrayList<>();
         list.add(new HomeFragment());
-        list.add(new com.zkb.mall.ui.ProductTypeFragment());
+        list.add(new ProductTypeFragment());
         list.add(new ShoppingCarFragment());
         Fragment fragment = CC.obtainBuilder("User").setActionName("MyFragment").build().call().getDataItem("MyFragment");
 
@@ -67,7 +67,7 @@ public class IndexActivity extends BaseViewPagerActivity {
 
             getViewPager().setCurrentItem(3);
 
-            CC.obtainBuilder("GoodsComponent").setActionName("GoodsDetail").build().call();
+           // CC.obtainBuilder("GoodsComponent").setActionName("GoodsDetail").build().call();
         });
     }
 

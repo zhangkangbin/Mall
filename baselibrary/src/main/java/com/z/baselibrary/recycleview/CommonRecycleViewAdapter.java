@@ -283,7 +283,7 @@ public abstract class CommonRecycleViewAdapter<T> extends RecyclerView.Adapter<C
     }
 
 
-    public abstract void setData(CombinationViewHolder holder, T t, int position);
+    public abstract void setData(CombinationViewHolder holder, T data, int position);
 
     public interface RecyclerViewScrollFooterListener {
 
