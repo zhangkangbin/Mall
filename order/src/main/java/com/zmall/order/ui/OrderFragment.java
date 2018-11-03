@@ -27,13 +27,10 @@ import retrofit2.Call;
 import retrofit2.Response;
 
 /**
- * A simple {@link Fragment} subclass.
+ * order list
  */
 public class OrderFragment extends BaseListFragment<AllOrderBean, AllOrderBean.DataBean> {
 
-    /**
-     * 状态：1、未付款，2、已付款，3、未发货，4、已发货，5、交易成功，6、交易关闭 ，7-退货申请，8-退货中，9-已退货，‘A’ -退款申请，B’ -退款中，‘C’ -已退款，‘D’-失效',
-     */
 
     public OrderFragment() {
         // Required empty public constructor
@@ -90,13 +87,65 @@ public class OrderFragment extends BaseListFragment<AllOrderBean, AllOrderBean.D
         holder.setText(R.id.orderTvOrderNo, "订单号：" + data.getOrderId());
         holder.setText(R.id.orderTvPayPrice, data.getDealSum());
         holder.setText(R.id.orderTvStatus, data.getDataStateStr());
-
-        holder.getView(R.id.orderBtnCancel).setOnClickListener(view -> {
-            cancelOrder(data.getOrderId());
-
-        });
+        View cancelBtn = holder.getView(R.id.orderBtnCancel);
 
 
+        if (isShowCancelBtn(data.getDataState())) {
+            cancelBtn.setVisibility(View.VISIBLE);
+            cancelBtn.setOnClickListener(view -> {
+                cancelOrder(data.getOrderId());
+
+            });
+
+        } else {
+            cancelBtn.setVisibility(View.GONE);
+        }
+
+        View payBtn = holder.getView(R.id.orderBtnPay);
+
+        if (isShowPayBtn(data.getDataState())) {
+            payBtn.setVisibility(View.VISIBLE);
+
+        } else {
+            payBtn.setVisibility(View.GONE);
+        }
+
+    }
+
+    private boolean isShowPayBtn(String status) {
+        //   状态：1、未付款，
+        return "1".equals(status);
+
+    }
+
+    private boolean isShowCancelBtn(String status) {
+        /*
+         * 状态：1、未付款，2、已付款，3、未发货，4、已发货，5、交易成功，6、交易关闭 ，7-退货申请，
+         * 8-退货中，9-已退货，‘A’ -退款申请，B’ -退款中，‘C’ -已退款，‘D’-失效',
+         */
+        boolean isShow;
+        switch (status) {
+
+            case "2":
+                isShow = true;
+                break;
+            case "3":
+                isShow = true;
+                break;
+            case "5":
+                isShow = false;
+                break;
+            case "6":
+                isShow = false;
+                break;
+            default:
+                isShow = true;
+                break;
+
+        }
+
+
+        return isShow;
     }
 
     private void cancelOrder(String orderId) {
