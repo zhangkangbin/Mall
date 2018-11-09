@@ -32,6 +32,8 @@
 
     <color name="color_ffff4b5a">#ffff4b5a</color>
     <color name="color_ffbbbbbb">#ffbbbbbb</color>
+    <color name="color_black_000000">#000000</color>
+    <color name="color_red_ea2c2c">#EA2C2C</color>
 
     <color name="color_pink_F76363">#F76363</color>
     <color name="color_black_333333">#333333</color>

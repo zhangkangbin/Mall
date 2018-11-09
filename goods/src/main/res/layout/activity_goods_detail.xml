@@ -17,7 +17,49 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/goodsViewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0px"
+        android:layout_weight="1" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_50"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/space_20"
+            android:layout_marginRight="@dimen/space_20"
+            android:gravity="center"
+            android:text="购物车" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/space_20"
+            android:src="@drawable/goods_detail_ic_shopping_car" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/color_black_000000"
+            android:gravity="center"
+            android:text="加入购物车"
+            android:textColor="@color/color_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/color_red_ea2c2c"
+            android:gravity="center"
+            android:text="立即购买"
+            android:textColor="@color/color_white" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

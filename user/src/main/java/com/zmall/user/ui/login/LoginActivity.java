@@ -10,6 +10,7 @@ import android.widget.EditText;
 import com.z.baselibrary.net.BaseBean;
 import com.z.baselibrary.net.HttpUtil;
 import com.z.baselibrary.net.MyCallback;
+import com.z.baselibrary.tool.StringUtils;
 import com.z.baselibrary.ui.BaseAppCompatActivity;
 import com.zmall.user.R;
 import com.zmall.user.api.UserApi;
@@ -34,8 +35,6 @@ public class LoginActivity extends BaseAppCompatActivity {
     private EditText login_edt_name;
     private EditText login_edt_pwd;
 
-    private View login_ll_code;
-    private View login_ll;
 
     @Override
     protected void initView(Bundle savedInstanceState) {
@@ -58,26 +57,10 @@ public class LoginActivity extends BaseAppCompatActivity {
 
         });
 
-        login_ll = findViewById(R.id.login_ll);
-
-        login_ll_code = findViewById(R.id.login_ll_code);
-
-/*        findViewById(R.id.login_tv_sms).setOnClickListener(v->{
+        //  login_ll = findViewById(R.id.login_ll);
+        //  login_ll_code = findViewById(R.id.login_ll_code);
 
 
-            if (login_ll_code.getVisibility() == View.VISIBLE) {
-                login_ll_code.setVisibility(View.GONE);
-                login_edt_pwd.setVisibility(View.VISIBLE);
-            } else {
-                login_edt_pwd.setVisibility(View.GONE);
-                login_ll_code.setVisibility(View.VISIBLE);
-            }
-
-            ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(login_ll, "rotationY", 180, 360);
-            objectAnimator.setDuration(1500);
-
-            objectAnimator.start();
-        });*/
     }
 
     private void userLogin() {
@@ -95,7 +78,10 @@ public class LoginActivity extends BaseAppCompatActivity {
         }
 
 
-        Map<String, String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>(2);
+
+        map.put("name", name);
+        map.put("password", StringUtils.getMD5(password));
 
         HttpUtil.getRetrofit().create(UserApi.class).userLogin(map).enqueue(new MyCallback<BaseBean>(this) {
             @Override
