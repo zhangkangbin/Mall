@@ -130,11 +130,11 @@ public class HttpUtil {
     }
 
 
-    public static Retrofit.Builder getRetrofitBuiler() {
-        return getRetrofitBuiler(mBaseUrl);
+    public static Retrofit.Builder getRetrofitBuilder() {
+        return getRetrofitBuilder(mBaseUrl);
     }
 
-    public static Retrofit.Builder getRetrofitBuiler(String baseUrl) {
+    public static Retrofit.Builder getRetrofitBuilder(String baseUrl) {
         Retrofit.Builder builder = new Retrofit.Builder();
         builder.baseUrl(baseUrl);
 
@@ -146,8 +146,8 @@ public class HttpUtil {
      *
      * @return url
      */
-    public static final String baseUrl = "http://39.108.132.70/";
-
+ //   public static final String baseUrl = "http://39.108.132.70/";
+    public static final String baseUrl = "http://192.168.0.104/";
 
     public static String getHeadUrl() {
 

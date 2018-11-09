@@ -1,6 +1,6 @@
 package com.zmall.home.api;
 
-
+import com.zmall.home.bean.HomeBean;
 import com.zmall.home.bean.ClassTypeBean;
 import com.zmall.home.bean.ClassTypeProductList;
 
@@ -22,5 +22,8 @@ public interface HomeApi {
     @GET("/public/class/goodsListByClass/{classNo}/{pageSize}/{page}")
     Call<ClassTypeProductList> getClassTypeProductList(@Path("classNo") String superClassNo,
                                                        @Path("pageSize") String pageSize, @Path("page") String page);
+    @GET("public/goods/goodsShow/{goodsId}")
+    Call<HomeBean> getHomeData(@Path("goodsId") String goodsId);
+
 
 }

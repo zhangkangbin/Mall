@@ -1,4 +1,4 @@
-package com.zkb.mall.ui;
+package com.zmall.home.ui;
 
 
 import android.os.Bundle;

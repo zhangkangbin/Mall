@@ -46,7 +46,7 @@ public class DownloadPresenter extends BasePresenter<IDownload> {
             return;
         }
 
-        Retrofit.Builder builder = HttpUtil.getRetrofitBuiler();
+        Retrofit.Builder builder = HttpUtil.getRetrofitBuilder();
         OkHttpClient client = new OkHttpClient.Builder()
                 .addNetworkInterceptor(new Interceptor() {
                     @Override
