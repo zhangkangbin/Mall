@@ -24,6 +24,6 @@ public interface UserApi {
     Call<AddressManageBean> getAddressList();
 
     @FormUrlEncoded
-    @POST("/token/addMgr/userAddMgrList")
+    @POST("/token/addMgr/userAddMgrinsert")
     Call<BaseBean> addAddress(@FieldMap Map<String,String> map);
 }

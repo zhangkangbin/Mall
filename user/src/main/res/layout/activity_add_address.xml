@@ -24,6 +24,7 @@
         <EditText
             android:id="@+id/addEdtName"
             android:layout_width="0px"
+            android:text="张大大"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/color_white" />
@@ -49,6 +50,8 @@
             android:id="@+id/addEdtPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="13496578562"
+            android:inputType="number"
             android:layout_weight="1"
             android:background="@color/color_white" />
 
@@ -69,8 +72,8 @@
             android:layout_height="wrap_content"
             android:text="所在地址：" />
 
-        <EditText
-            android:id="@+id/addEdtAddressSSQ"
+        <TextView
+            android:id="@+id/addTvSelectAddressSSQ"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -102,6 +105,7 @@
         <EditText
             android:id="@+id/addEdtDetailAddress"
             android:layout_width="0px"
+            android:text="详细地址"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/color_white" />
@@ -111,10 +115,8 @@
 
     <include layout="@layout/view_h_line" />
 
-
     <Button
-
-        android:id="@+id/add_btn_save"
+        android:id="@+id/addBtnSave"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="@dimen/space_15"
