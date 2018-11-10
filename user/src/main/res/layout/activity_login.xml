@@ -52,7 +52,7 @@
                 android:layout_marginRight="@dimen/space_15"
                 android:layout_marginTop="@dimen/space_10"
                 android:background="@drawable/edt_bg_radius_white"
-                android:drawableLeft="@drawable/login_ic_pwd"
+                android:drawableLeft="@drawable/login_edt_name"
                 android:drawablePadding="@dimen/space_10"
                 android:hint="请输入密码"
                 android:inputType="textPassword"

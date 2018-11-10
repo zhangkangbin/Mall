@@ -20,6 +20,7 @@ import com.zmall.order.R;
 import com.zmall.order.api.OrderApi;
 import com.zmall.order.bean.AllOrderBean;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -111,6 +112,15 @@ public class OrderFragment extends BaseListFragment<AllOrderBean, AllOrderBean.D
             payBtn.setVisibility(View.GONE);
         }
 
+        holder.getView(R.id.orderRl).setOnClickListener(view -> {
+            Intent intent = new Intent();
+            intent.setClass(getActivity(), OrderDetailActivity.class);
+            intent.putExtra("orderId", data.getOrderId());
+            startActivity(intent);
+        });
+
+
+
     }
 
     private boolean isShowPayBtn(String status) {
@@ -150,11 +160,6 @@ public class OrderFragment extends BaseListFragment<AllOrderBean, AllOrderBean.D
     }
 
     private void cancelOrder(String orderId) {
-
-        Intent intent = new Intent();
-        intent.setClass(getActivity(), OrderDetailActivity.class);
-        intent.putExtra("orderId", orderId);
-        startActivity(intent);
 
         Map<String, Object> params = new HashMap<>();
         params.put("orderId", orderId);

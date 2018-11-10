@@ -22,16 +22,11 @@
             android:text="收货人：" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:id="@+id/addEdtName"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/color_white" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/item_go" />
 
 
     </LinearLayout>
@@ -51,16 +46,11 @@
             android:text="手机号码：" />
 
         <EditText
+            android:id="@+id/addEdtPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/color_white" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/item_go" />
 
 
     </LinearLayout>
@@ -80,7 +70,8 @@
             android:text="所在地址：" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:id="@+id/addEdtAddressSSQ"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/color_white" />
@@ -109,16 +100,11 @@
             android:text="详细地址：" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:id="@+id/addEdtDetailAddress"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/color_white" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/item_go" />
 
 
     </LinearLayout>

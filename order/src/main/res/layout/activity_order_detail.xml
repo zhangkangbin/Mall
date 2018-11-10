@@ -11,7 +11,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0px"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -46,11 +47,13 @@
                 android:padding="@dimen/space_15">
 
                 <TextView
+                    android:id="@+id/orderDetailTvName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="张先森：13414962111" />
 
                 <TextView
+                    android:id="@+id/orderDetailTvAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="广东省深圳市南山区科兴科学园" />
@@ -69,9 +72,321 @@
 
             <View style="@style/h_line" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_10"
+                android:background="@color/color_white"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/orderTvPayText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:text="商品合计："
+                        android:textColor="@color/color_black_333333" />
+
+
+                    <TextView
+                        android:id="@+id/orderTvPay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:layout_toRightOf="@+id/orderTvPayText"
+                        android:text="￥18.00"
+                        android:textColor="@color/color_black_999999" />
+
+
+                    <TextView
+                        android:id="@+id/orderTvFreightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/orderTvPayText"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:text="运费："
+                        android:textColor="@color/color_black_333333" />
+
+                    <TextView
+                        android:id="@+id/orderTvFreight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/orderTvPayText"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:layout_toRightOf="@+id/orderTvPayText"
+                        android:text="￥19.00"
+                        android:textColor="@color/color_black_999999" />
+
+                    <TextView
+                        android:id="@+id/orderTvDiscountText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/orderTvFreightText"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:text="优惠券："
+                        android:textColor="@color/color_black_333333" />
+
+                    <TextView
+                        android:id="@+id/orderTvDiscount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/orderTvFreightText"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:layout_toRightOf="@+id/orderTvPayText"
+                        android:text="￥20.00"
+                        android:textColor="@color/color_black_999999" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/orderTvDiscountText"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:text="活动优惠："
+                        android:textColor="@color/color_black_333333" />
+
+
+                    <TextView
+                        android:id="@+id/orderTvHdDiscount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/orderTvDiscount"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:layout_toRightOf="@+id/orderTvPayText"
+                        android:text="￥21.00"
+                        android:textColor="@color/color_black_999999" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_10"
+                android:background="@color/color_white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:text="订单编号："
+                        android:textColor="@color/color_black_333333" />
+
+                    <TextView
+                        android:id="@+id/orderDetailTvId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/orderTvDiscount"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:layout_toRightOf="@+id/orderTvPayText"
+                        android:text="￥21.00"
+                        android:textColor="@color/color_black_999999" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:text="提交时间："
+                        android:textColor="@color/color_black_333333" />
+
+                    <TextView
+                        android:id="@+id/orderDetailTvPostTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/orderTvDiscount"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:layout_toRightOf="@+id/orderTvPayText"
+                        android:text="￥21.00"
+                        android:textColor="@color/color_black_999999" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:text="支付方式："
+                        android:textColor="@color/color_black_333333" />
+
+                    <TextView
+                        android:id="@+id/orderDetailTvPayType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/orderTvDiscount"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:layout_toRightOf="@+id/orderTvPayText"
+                        android:text="￥21.00"
+                        android:textColor="@color/color_black_999999" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_10"
+                android:background="@color/color_white"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:text="发票类型："
+                        android:textColor="@color/color_black_333333" />
+
+                    <TextView
+                        android:id="@+id/orderDetailTvFpType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/orderTvDiscount"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:layout_toRightOf="@+id/orderTvPayText"
+                        android:text="￥21.00"
+                        android:textColor="@color/color_black_999999" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:text="发票抬头："
+                        android:textColor="@color/color_black_333333" />
+
+                    <TextView
+                        android:id="@+id/orderDetailTvFpTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/orderTvDiscount"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:layout_toRightOf="@+id/orderTvPayText"
+                        android:text="￥21.00"
+                        android:textColor="@color/color_black_999999" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:text="发票内容："
+                        android:textColor="@color/color_black_333333" />
+
+                    <TextView
+                        android:id="@+id/orderDetailTvFpContent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/orderTvDiscount"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:layout_toRightOf="@+id/orderTvPayText"
+                        android:text="￥21.00"
+                        android:textColor="@color/color_black_999999" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
     </ScrollView>
+
+    <View style="@style/h_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white"
+        android:orientation="horizontal"
+        android:padding="@dimen/space_10">
+
+        <TextView
+            android:id="@+id/orderDetailTvPayPrice"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="应付款：￥188.00"
+            android:textColor="@color/color_pink_F76363" />
+
+        <Button
+            android:id="@+id/orderDetailBtnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/space_30"
+            android:layout_marginLeft="@dimen/space_3"
+            android:background="@drawable/circle_layout_white"
+            android:text="取消订单"
+            android:textSize="@dimen/text_size_12" />
+
+        <Button
+            android:id="@+id/orderDetailBtnPay"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/space_30"
+            android:layout_marginLeft="@dimen/space_3"
+            android:background="@drawable/circle_layout_white"
+            android:text="立即付款"
+            android:textColor="@color/color_pink_F76363"
+            android:textSize="@dimen/text_size_12" />
+    </LinearLayout>
 
 </LinearLayout>

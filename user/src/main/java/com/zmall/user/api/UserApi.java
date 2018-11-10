@@ -2,6 +2,7 @@ package com.zmall.user.api;
 
 import com.z.baselibrary.net.BaseBean;
 import com.z.baselibrary.net.MyCallback;
+import com.zmall.user.bean.AddressManageBean;
 
 import java.util.Map;
 
@@ -15,6 +16,14 @@ import retrofit2.http.Url;
 public interface UserApi {
 
     @FormUrlEncoded
-    @POST("user/login")
+    @POST("api/user/login")
     Call<BaseBean> userLogin(@FieldMap Map<String,String> map);
+
+
+    @POST("/token/addMgr/userAddMgrList")
+    Call<AddressManageBean> getAddressList();
+
+    @FormUrlEncoded
+    @POST("/token/addMgr/userAddMgrList")
+    Call<BaseBean> addAddress(@FieldMap Map<String,String> map);
 }

@@ -2,6 +2,7 @@ package com.zmall.order.api;
 
 import com.z.baselibrary.net.BaseBean;
 import com.zmall.order.bean.AllOrderBean;
+import com.zmall.order.bean.OrderDetailBean;
 
 import java.util.Map;
 
@@ -37,7 +38,7 @@ public interface OrderApi {
      */
     @POST("/token/order/orderAllInfo")
     @FormUrlEncoded
-    Call<BaseBean> getOrderAllInfo(@Field("orderId") String orderId);
+    Call<OrderDetailBean> getOrderAllInfo(@Field("orderId") String orderId);
 
 
 }
