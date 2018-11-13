@@ -7,6 +7,7 @@ import com.z.baselibrary.net.HttpUtil;
 import com.z.baselibrary.recycleview.BaseListActivity;
 import com.z.baselibrary.recycleview.CombinationViewHolder;
 import com.zmall.user.R;
+import com.zmall.user.api.AddressApi;
 import com.zmall.user.api.UserApi;
 import com.zmall.user.bean.AddressManageBean;
 
@@ -62,6 +63,6 @@ public class AddressManageActivity extends BaseListActivity<AddressManageBean, A
 
     @Override
     public Call<AddressManageBean> getCall(Map<String, Object> map) {
-        return HttpUtil.getRetrofit().create(UserApi.class).getAddressList();
+        return HttpUtil.getRetrofit().create(AddressApi.class).getAddressList();
     }
 }

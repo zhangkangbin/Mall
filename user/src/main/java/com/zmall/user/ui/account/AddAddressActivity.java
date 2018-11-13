@@ -15,8 +15,10 @@ import com.lljjcoder.style.citypickerview.CityPickerView;
 import com.z.baselibrary.net.BaseBean;
 import com.z.baselibrary.net.HttpUtil;
 import com.z.baselibrary.net.MyCallback;
+import com.z.baselibrary.tool.ActivityManager;
 import com.z.baselibrary.ui.BaseAppCompatActivity;
 import com.zmall.user.R;
+import com.zmall.user.api.AddressApi;
 import com.zmall.user.api.UserApi;
 
 import java.util.HashMap;
@@ -46,7 +48,7 @@ public class AddAddressActivity extends BaseAppCompatActivity {
     private EditText mPhone;
     private String mAddressSSQ = "广东省深圳市南山区";
     private EditText mAddressDetail;
-    //申明对象
+
     private CityPickerView mPicker = new CityPickerView();
 
     @Override
@@ -67,6 +69,7 @@ public class AddAddressActivity extends BaseAppCompatActivity {
     private String mProvinceName;
     private String mCityName;
     private String mDistrictName;
+
     private void initPicker() {
         /**
          * 预先加载仿iOS滚轮实现的全部数据
@@ -89,20 +92,20 @@ public class AddAddressActivity extends BaseAppCompatActivity {
                 StringBuilder sb = new StringBuilder();
                 //省份
                 if (province != null) {
-                    mProvinceName=province.getName();
+                    mProvinceName = province.getName();
                     sb.append(province.getName());
                 }
 
                 //城市
                 if (city != null) {
                     sb.append(city.getName());
-                    mCityName=city.getName();
+                    mCityName = city.getName();
                 }
 
                 //地区
                 if (district != null) {
                     sb.append(district.getName());
-                     mDistrictName=district.getName();
+                    mDistrictName = district.getName();
                 }
 
                 addressSSQ.setText(sb.toString());
@@ -145,17 +148,18 @@ public class AddAddressActivity extends BaseAppCompatActivity {
         map.put("receiverMobile", phone);
         map.put("receiverState", mProvinceName);
         map.put("receiverCity", mCityName);
-        map.put("receiverDistrict",   mDistrictName);
+        map.put("receiverDistrict", mDistrictName);
         map.put("receiverAddressDetail", addressDetail);
         map.put("receiverZipCode", "0");
         map.put("defaultSite", "0");
 
         // TextUtils.isEmpty()
 
-        HttpUtil.getRetrofit().create(UserApi.class).addAddress(map).enqueue(new MyCallback<BaseBean>(this, MyCallback.TIPS_TOAST) {
+        HttpUtil.getRetrofit().create(AddressApi.class).addAddress(map).enqueue(new MyCallback<BaseBean>(this, MyCallback.TIPS_TOAST) {
             @Override
             public void onSuccess(Call<BaseBean> call, Response<BaseBean> response) {
 
+                ActivityManager.getInstance().killTopActivity();
             }
         });
     }

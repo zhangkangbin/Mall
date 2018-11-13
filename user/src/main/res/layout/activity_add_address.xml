@@ -24,10 +24,11 @@
         <EditText
             android:id="@+id/addEdtName"
             android:layout_width="0px"
-            android:text="张大大"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/color_white" />
+            android:background="@color/color_white"
+            android:text="张大大"
+            android:textSize="@dimen/text_size_14" />
 
 
     </LinearLayout>
@@ -50,10 +51,11 @@
             android:id="@+id/addEdtPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="13496578562"
-            android:inputType="number"
             android:layout_weight="1"
-            android:background="@color/color_white" />
+            android:background="@color/color_white"
+            android:inputType="number"
+            android:text="13496578562"
+            android:textSize="@dimen/text_size_14" />
 
 
     </LinearLayout>
@@ -77,7 +79,8 @@
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/color_white" />
+            android:background="@color/color_white"
+            android:textSize="@dimen/text_size_14" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -105,10 +108,11 @@
         <EditText
             android:id="@+id/addEdtDetailAddress"
             android:layout_width="0px"
-            android:text="详细地址"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/color_white" />
+            android:background="@color/color_white"
+            android:text="详细地址"
+            android:textSize="@dimen/text_size_14" />
 
 
     </LinearLayout>
@@ -118,7 +122,7 @@
     <Button
         android:id="@+id/addBtnSave"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/space_40"
         android:layout_margin="@dimen/space_15"
         android:background="@drawable/circle_btn_red"
         android:text="保存"
