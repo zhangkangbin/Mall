@@ -35,60 +35,11 @@
 
     <View style="@style/h_line" />
 
-    <RelativeLayout
+
+    <com.z.baselibrary.ui.list.ListViewScrollView
+        android:id="@+id/orderListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/space_10">
-
-        <ImageView
-            android:id="@+id/orderIv"
-            android:layout_width="@dimen/space_50"
-            android:layout_height="@dimen/space_50"
-            android:src="@drawable/banner_dian_focus" />
-
-        <TextView
-            android:id="@+id/orderTvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/space_6"
-            android:layout_toRightOf="@id/orderIv"
-            android:text="商品名称"
-            android:textColor="@color/color_black_333333" />
-
-        <TextView
-            android:id="@+id/orderTvType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/orderTvTitle"
-            android:layout_marginLeft="@dimen/space_6"
-            android:layout_toRightOf="@id/orderIv"
-            android:text="商品属性"
-            android:textSize="@dimen/text_size_12" />
-
-        <TextView
-            android:id="@+id/orderTvPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/orderTvType"
-            android:layout_marginLeft="@dimen/space_6"
-            android:layout_marginTop="@dimen/space_10"
-            android:layout_toRightOf="@id/orderIv"
-            android:text="￥99.99"
-            android:textColor="@color/color_pink_F76363"
-            android:textSize="@dimen/text_size_12" />
-
-        <TextView
-            android:id="@+id/orderTvNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/orderTvType"
-            android:layout_marginLeft="@dimen/space_6"
-            android:layout_marginTop="@dimen/space_10"
-            android:layout_toRightOf="@id/orderTvPrice"
-            android:text="x1"
-            android:textColor="@color/color_pink_F76363"
-            android:textSize="@dimen/text_size_12" />
-    </RelativeLayout>
+        android:layout_height="wrap_content"/>
 
     <View style="@style/h_line" />
 

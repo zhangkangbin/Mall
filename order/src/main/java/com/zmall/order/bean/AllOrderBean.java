@@ -30,7 +30,6 @@ public class AllOrderBean extends BaseBean {
         private String dealSum;
         private String dataState;
         private String rateBuyer;
-
         private String dataStateStr;
         private List<GoodsListBean> goodsList;
         public String getDataStateStr() {
@@ -94,9 +93,18 @@ public class AllOrderBean extends BaseBean {
             private String skuNo;
             private String goodsName;
             private String attrDesc;
-            private double price;
+            private String price;
             private int num;
 
+            public String getPicUri() {
+                return picUri;
+            }
+
+            public void setPicUri(String picUri) {
+                this.picUri = picUri;
+            }
+
+            private String picUri;
             public Object getIdShoppingCart() {
                 return idShoppingCart;
             }
@@ -129,11 +137,11 @@ public class AllOrderBean extends BaseBean {
                 this.attrDesc = attrDesc;
             }
 
-            public double getPrice() {
+            public String getPrice() {
                 return price;
             }
 
-            public void setPrice(double price) {
+            public void setPrice(String price) {
                 this.price = price;
             }
 

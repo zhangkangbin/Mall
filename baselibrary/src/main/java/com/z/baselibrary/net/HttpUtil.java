@@ -146,8 +146,8 @@ public class HttpUtil {
      *
      * @return url
      */
- //   public static final String baseUrl = "http://39.108.132.70/";
-    public static final String baseUrl = "http://192.168.0.106/";
+    public static final String baseUrl = "http://39.108.132.70/";
+  //  public static final String baseUrl = "http://192.168.0.106/";
 
     public static String getHeadUrl() {
 

@@ -41,7 +41,7 @@ public abstract class MyCallback<T extends BaseBean> implements Callback<T> {
      * @param dialogLoading DialogLoading的回调
      */
     public MyCallback(HttpDialogLoading dialogLoading) {
-        init(dialogLoading, 0, true);//
+        init(dialogLoading, 0, true);
 
     }
 

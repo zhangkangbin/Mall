@@ -26,12 +26,11 @@ import com.z.baselibrary.tool.ActivityManager;
 import com.z.baselibrary.ui.dialog.TipsDialog;
 
 /**
- *
  * @author zhangkb
  * @date 2017/12/27 0027
  */
 
-public abstract class BaseAppCompatActivity extends AppCompatActivity implements  HttpDialogLoading {
+public abstract class BaseAppCompatActivity extends AppCompatActivity implements HttpDialogLoading {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +47,9 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
 
 
     protected Toolbar mToolbar;
+
     /**
      * set toolbar title
-     *
      */
     public Toolbar initToobar(int titleId) {
 
@@ -77,11 +76,10 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
     }
 
 
-
     public Toolbar getToolbar(String title, int id) {
 
         if (mToolbar == null) {
-            mToolbar =  findViewById(R.id.toolbar);
+            mToolbar = findViewById(R.id.toolbar);
             if (mToolbar == null) {
                 return null;
             }
@@ -114,7 +112,6 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
     abstract protected void initView(Bundle savedInstanceState);
 
     abstract protected void initData(Bundle savedInstanceState);
-
 
 
     private TipsDialog tipsDialog;
@@ -167,7 +164,7 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
 
     protected void showToast(int textID) {
 
-      Toast.makeText(this.getApplicationContext(), getResources().getText(textID), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this.getApplicationContext(), getResources().getText(textID), Toast.LENGTH_SHORT).show();
 
 
     }
@@ -199,7 +196,7 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
     protected boolean hasPermissions(String[] permissions) {
 
 
-      //  ActivityCompat.checkSelfPermission(getApplicationContext(),permissions);
+        //  ActivityCompat.checkSelfPermission(getApplicationContext(),permissions);
         if (canMakeSmores()) {
             // log.logE(TAG, "hasPermissions ::: !!!!!");
             int index = 0;
@@ -224,10 +221,22 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.M;
     }
 
-    public void hideSoftInput(View view){
+    public void hideSoftInput(View view) {
 
         ((InputMethodManager) getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE))
-                .hideSoftInputFromWindow(view.getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
+                .hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+    }
+
+
+    protected TextView setTextView(int viewId, String text) {
+
+        TextView textView = findViewById(viewId);
+
+        if(textView!=null&&!TextUtils.isEmpty(text)){
+            textView.setText(text);
+        }
+
+        return textView;
     }
 
 

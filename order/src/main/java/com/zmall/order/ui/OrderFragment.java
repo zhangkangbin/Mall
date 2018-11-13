@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.FrameLayout;
 
 import com.z.baselibrary.net.BaseBean;
@@ -16,7 +17,9 @@ import com.z.baselibrary.net.HttpUtil;
 import com.z.baselibrary.net.MyCallback;
 import com.z.baselibrary.recycleview.CombinationViewHolder;
 import com.z.baselibrary.ui.BaseListFragment;
+import com.z.baselibrary.ui.list.ListViewScrollView;
 import com.zmall.order.R;
+import com.zmall.order.adapter.AllOrderAdapter;
 import com.zmall.order.api.OrderApi;
 import com.zmall.order.bean.AllOrderBean;
 
@@ -90,8 +93,6 @@ public class OrderFragment extends BaseListFragment<AllOrderBean, AllOrderBean.D
         holder.setText(R.id.orderTvPayPrice, data.getDealSum());
         holder.setText(R.id.orderTvStatus, data.getDataStateStr());
         View cancelBtn = holder.getView(R.id.orderBtnCancel);
-
-
         if (isShowCancelBtn(data.getDataState())) {
             cancelBtn.setVisibility(View.VISIBLE);
             cancelBtn.setOnClickListener(view -> {
@@ -112,14 +113,28 @@ public class OrderFragment extends BaseListFragment<AllOrderBean, AllOrderBean.D
             payBtn.setVisibility(View.GONE);
         }
 
-        holder.getView(R.id.orderRl).setOnClickListener(view -> {
+ /*       holder.getView(R.id.orderRl).setOnClickListener(view -> {
+            Intent intent = new Intent();
+            intent.setClass(getActivity(), OrderDetailActivity.class);
+            intent.putExtra("orderId", data.getOrderId());
+            startActivity(intent);
+        });*/
+
+
+        ListViewScrollView listView = holder.getView(R.id.orderListView);
+        listView.setFocusable(false);
+        listView.setOnItemClickListener((parent, view, position1, id) -> {
+            if (getActivity() == null) {
+                return;
+            }
             Intent intent = new Intent();
             intent.setClass(getActivity(), OrderDetailActivity.class);
             intent.putExtra("orderId", data.getOrderId());
             startActivity(intent);
         });
 
-
+        AllOrderAdapter adapter = new AllOrderAdapter(getLayoutInflater(), data.getGoodsList());
+        listView.setAdapter(adapter);
 
     }
 

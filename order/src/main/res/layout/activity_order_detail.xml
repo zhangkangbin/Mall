@@ -27,6 +27,7 @@
 
 
                 <TextView
+                    android:id="@+id/orderDetailTvTile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -69,6 +70,11 @@
                 android:padding="@dimen/space_15"
                 android:text="商品信息"
                 android:textColor="@color/color_black_333333" />
+
+            <com.z.baselibrary.ui.list.ListViewScrollView
+                android:id="@+id/orderDetailListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <View style="@style/h_line" />
 

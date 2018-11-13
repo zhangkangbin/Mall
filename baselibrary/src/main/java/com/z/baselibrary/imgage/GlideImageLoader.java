@@ -67,7 +67,7 @@ class GlideImageLoader implements ILoaderProxy {
     @Override
     public void displayImage(String url, ImageView imageView) {
 
-     /*   if (MyApplication.getInstance() == null) {
+/*       if (MyApplication.getInstance() == null) {
             throw new IllegalArgumentException("Context为空");
         }
         //

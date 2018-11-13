@@ -28,17 +28,11 @@ public class OrderDetailBean extends BaseBean {
          * orderAllInfo : {"title":"交易关闭","orderId":"1","goodsList":[{"picUri":"https://img.alicdn.com/imgextra/i1/2178558361/TB2QPrEnQZmBKNjSZPiXXXFNVXa_!!2178558361-0-item_pic.jpg","goodsId":null,"idShoppingCart":null,"skuNo":"1","goodsName":"名嫒气质2018秋季新款V领修身显瘦金丝绒连衣裙礼服中长款A字裙子","attrDesc":"XS码,白色","price":279,"num":2},{"picUri":"https://img.alicdn.com/imgextra/i2/2178558361/TB2BN6inY3nBKNjSZFMXXaUSFXa_!!2178558361.jpg","goodsId":null,"idShoppingCart":null,"skuNo":"1","goodsName":"名嫒气质2018秋季新款V领修身显瘦金丝绒连衣裙礼服中长款A字裙子","attrDesc":"XS码,白色","price":279,"num":2},{"picUri":"https://img.alicdn.com/imgextra/i1/2178558361/TB2fYmSn8jTBKNjSZFDXXbVgVXa_!!2178558361.jpg","goodsId":null,"idShoppingCart":null,"skuNo":"1","goodsName":"名嫒气质2018秋季新款V领修身显瘦金丝绒连衣裙礼服中长款A字裙子","attrDesc":"XS码,白色","price":279,"num":2},{"picUri":"https://img.alicdn.com/imgextra/i1/2178558361/TB2XwLenVooBKNjSZFPXXXa2XXa_!!2178558361.jpg","goodsId":null,"idShoppingCart":null,"skuNo":"1","goodsName":"名嫒气质2018秋季新款V领修身显瘦金丝绒连衣裙礼服中长款A字裙子","attrDesc":"XS码,白色","price":279,"num":2},{"picUri":"https://img.alicdn.com/imgextra/i1/2178558361/TB2QPrEnQZmBKNjSZPiXXXFNVXa_!!2178558361-0-item_pic.jpg","goodsId":null,"idShoppingCart":null,"skuNo":"3","goodsName":"名嫒气质2018秋季新款V领修身显瘦金丝绒连衣裙礼服中长款A字裙子","attrDesc":"M码,白色","price":279,"num":2},{"picUri":"https://img.alicdn.com/imgextra/i2/2178558361/TB2BN6inY3nBKNjSZFMXXaUSFXa_!!2178558361.jpg","goodsId":null,"idShoppingCart":null,"skuNo":"3","goodsName":"名嫒气质2018秋季新款V领修身显瘦金丝绒连衣裙礼服中长款A字裙子","attrDesc":"M码,白色","price":279,"num":2},{"picUri":"https://img.alicdn.com/imgextra/i1/2178558361/TB2fYmSn8jTBKNjSZFDXXbVgVXa_!!2178558361.jpg","goodsId":null,"idShoppingCart":null,"skuNo":"3","goodsName":"名嫒气质2018秋季新款V领修身显瘦金丝绒连衣裙礼服中长款A字裙子","attrDesc":"M码,白色","price":279,"num":2},{"picUri":"https://img.alicdn.com/imgextra/i1/2178558361/TB2XwLenVooBKNjSZFPXXXa2XXa_!!2178558361.jpg","goodsId":null,"idShoppingCart":null,"skuNo":"3","goodsName":"名嫒气质2018秋季新款V领修身显瘦金丝绒连衣裙礼服中长款A字裙子","attrDesc":"M码,白色","price":279,"num":2}],"receiverName":"李四","receiverPhone":"7003219","receiverMobile":"17765528954","receiverState":"上海直辖市","receiverCity":"上海市","receiverDistrict":"虹桥区","receiverAddressDetail":"岳阳路河图口御河社区25D-1109","dataState":"6","paymentDate":"2018-10-25T02:18:30.000+0000","rateBuyer":"0","postFee":16.5,"paymentType":"1","dealSum":1100.99,"invoiceType":"1","invoiceHead":"www.qianhaiwuyin@gou.com","invoiceContent":"普通日用商品"}
          */
 
-        private ShippingInfoBean shippingInfo;
+      //  private ShippingInfoBean shippingInfo;
         private OrderAllInfoBean orderAllInfo;
-        private List<?> shippingList;
+      //  private List<?> shippingList;
 
-        public ShippingInfoBean getShippingInfo() {
-            return shippingInfo;
-        }
 
-        public void setShippingInfo(ShippingInfoBean shippingInfo) {
-            this.shippingInfo = shippingInfo;
-        }
 
         public OrderAllInfoBean getOrderAllInfo() {
             return orderAllInfo;
@@ -48,13 +42,7 @@ public class OrderDetailBean extends BaseBean {
             this.orderAllInfo = orderAllInfo;
         }
 
-        public List<?> getShippingList() {
-            return shippingList;
-        }
 
-        public void setShippingList(List<?> shippingList) {
-            this.shippingList = shippingList;
-        }
 
         public static class ShippingInfoBean {
             /**
@@ -305,7 +293,7 @@ public class OrderDetailBean extends BaseBean {
                 private String skuNo;
                 private String goodsName;
                 private String attrDesc;
-                private double price;
+                private String price;
                 private int num;
 
                 public String getPicUri() {
@@ -356,11 +344,11 @@ public class OrderDetailBean extends BaseBean {
                     this.attrDesc = attrDesc;
                 }
 
-                public double getPrice() {
+                public String getPrice() {
                     return price;
                 }
 
-                public void setPrice(double price) {
+                public void setPrice(String price) {
                     this.price = price;
                 }
 
