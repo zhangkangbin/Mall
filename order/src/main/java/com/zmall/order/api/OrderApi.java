@@ -31,7 +31,7 @@ public interface OrderApi {
     Call<BaseBean> cancelOrder(@FieldMap Map<String, Object> params);
 
     /**
-     * cancel order
+     * order detail
      *
      * @param orderId
      * @return

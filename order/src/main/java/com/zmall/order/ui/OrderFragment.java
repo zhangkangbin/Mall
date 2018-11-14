@@ -17,6 +17,8 @@ import com.z.baselibrary.net.HttpUtil;
 import com.z.baselibrary.net.MyCallback;
 import com.z.baselibrary.recycleview.CombinationViewHolder;
 import com.z.baselibrary.ui.BaseListFragment;
+import com.z.baselibrary.ui.dialog.ITipsDialog;
+import com.z.baselibrary.ui.dialog.TipsDialog;
 import com.z.baselibrary.ui.list.ListViewScrollView;
 import com.zmall.order.R;
 import com.zmall.order.adapter.AllOrderAdapter;
@@ -176,17 +178,27 @@ public class OrderFragment extends BaseListFragment<AllOrderBean, AllOrderBean.D
 
     private void cancelOrder(String orderId) {
 
-        Map<String, Object> params = new HashMap<>();
-        params.put("orderId", orderId);
-        params.put("remark", "买多了");
-        params.put("afState", "0");
 
-        HttpUtil.getRetrofit().create(OrderApi.class).cancelOrder(params).enqueue(new MyCallback<BaseBean>() {
-            @Override
-            public void onSuccess(Call<BaseBean> call, Response<BaseBean> response) {
+        TipsDialog tipsDialog=new TipsDialog.Builder(getActivity())
+                .setContentText("确定要取消")
+                .setNegativeButton(() -> {
+                    Map<String, Object> params = new HashMap<>(2);
+                    params.put("orderId", orderId);
+                    params.put("remark", "买多了");
+                    params.put("afState", "0");
 
-            }
-        });
+                    HttpUtil.getRetrofit().create(OrderApi.class).cancelOrder(params).enqueue(new MyCallback<BaseBean>() {
+                        @Override
+                        public void onSuccess(Call<BaseBean> call, Response<BaseBean> response) {
+
+                        }
+                    });
+                })
+                .show();
+
+
+
+
     }
 
     @Override

@@ -5,19 +5,27 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.billy.cc.core.component.CC;
+import com.z.baselibrary.imgage.ImageLoader;
+import com.z.baselibrary.net.HttpUtil;
+import com.z.baselibrary.net.MyCallback;
 import com.z.baselibrary.recycleview.CombinationViewHolder;
 import com.z.baselibrary.ui.BaseListFragment;
 import com.z.baselibrary.ui.banner.ImageCycleView;
 import com.zmall.home.R;
+import com.zmall.home.api.HomeApi;
 import com.zmall.home.bean.HomeBean;
+import com.zmall.home.bean.HomeInfoBean;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import retrofit2.Call;
+import retrofit2.Response;
 
 
 /**
@@ -38,22 +46,44 @@ public class HomeFragment extends BaseListFragment<HomeBean, HomeBean.DataBean> 
         return recyclerView;
     }
 
+    private View header;
 
     @Override
     public void initData(View view, Bundle savedInstanceState) {
 
 
-        View header=LayoutInflater.from(getActivity()).inflate(R.layout.item_header_home,null);
+        header = LayoutInflater.from(getActivity()).inflate(R.layout.item_header_home, null);
         getListBindDataHelper().addHeader(header);
+        initInfo();
 
+    }
+
+
+    private void initInfo() {
+
+
+        HttpUtil.getRetrofit().create(HomeApi.class).getHomeInfo().enqueue(new MyCallback<HomeInfoBean>() {
+            @Override
+            public void onSuccess(Call<HomeInfoBean> call, Response<HomeInfoBean> response) {
+                initImageCycleView(response.body().getData());
+            }
+        });
+
+    }
+
+    private void initImageCycleView(HomeInfoBean.DataBean data) {
         List<String> imageUrlList = new ArrayList<>();
-        imageUrlList.add("https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=209531698,2607942925&fm=27&gp=0.jpg");
-        imageUrlList.add("https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3877368857,984168879&fm=27&gp=0.jpg");
+
+        for (HomeInfoBean.DataBean.SlideShowListBean info : data.getSlideShowList()) {
+            imageUrlList.add(info.getPicUri());
+        }
+
+        //  imageUrlList.add("https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=209531698,2607942925&fm=27&gp=0.jpg");
+        //   imageUrlList.add("https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3877368857,984168879&fm=27&gp=0.jpg");
         ImageCycleView imageCycleView = header.findViewById(R.id.home_banner);
         imageCycleView.setImageResources(imageUrlList);
+        imageCycleView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         imageCycleView.startImageCycle();
-
-
     }
 
 
@@ -65,27 +95,27 @@ public class HomeFragment extends BaseListFragment<HomeBean, HomeBean.DataBean> 
     @Override
     public List<HomeBean.DataBean> getAdapterList(HomeBean result) {
 
-        List<HomeBean.DataBean> list = new ArrayList<>();
 
-        for (int i = 0; i < 100; i++) {
-            HomeBean.DataBean dataBean = new HomeBean.DataBean();
-          //  dataBean.setPirce(i + ".00 元");
-            list.add(dataBean);
-        }
-
-
-        return list;
+        return result.getData();
     }
 
     @Override
     public void bindData(CombinationViewHolder holder, HomeBean.DataBean t, int position) {
 
-    //    holder.setTextView(R.id.price,t.getPirce());
-        holder.getView(R.id.img_product).setOnClickListener(v -> CC.obtainBuilder("User").setActionName("UserLogin").build().call());
+        ImageView productImg = holder.getView(R.id.img_product);
+
+        ImageLoader.getInstance().displayImage(getActivity().getApplicationContext(), t.getPicUri(), productImg);
+
+        productImg.setOnClickListener(v -> CC.obtainBuilder("User").setActionName("UserLogin").build().call());
+        holder.setTextView(R.id.goodsName, t.getGoodsName());
+        holder.setTextView(R.id.price, "￥" + t.getPrice());
+
     }
 
     @Override
     public Call<HomeBean> getCall(Map<String, Object> map) {
-        return null;
+
+        return HttpUtil.getRetrofit().create(HomeApi.class).getHomeData((String) map.get("pageSize"),
+                (Integer) map.get("curPage"));
     }
 }

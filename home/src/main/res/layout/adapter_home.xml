@@ -4,30 +4,40 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/space_10"
-    android:padding="@dimen/space_2"
     android:background="@drawable/circle_layout_white"
     android:orientation="vertical"
+    android:padding="@dimen/space_1"
     tools:context=".ui.HomeFragment">
 
 
     <ImageView
         android:id="@+id/img_product"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/space_120"
         android:src="@drawable/test_img" />
+
+    <TextView
+        android:id="@+id/goodsName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/space_6"
+        android:layout_marginRight="@dimen/space_6"
+        android:layout_marginTop="@dimen/space_6"
+        android:gravity="center"
+        android:textColor="@color/color_black_333333"
+        android:textSize="@dimen/text_size_12" />
 
     <TextView
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/space_6"
-        android:background="@color/color_white"
         android:gravity="center"
-        android:padding="@dimen/space_15"
-        android:text="price" />
+        android:padding="@dimen/space_6"
+        android:text="price"
+        android:textColor="@color/color_pink_F76363" />
 
-    <include layout="@layout/view_h_line" />
 
 </LinearLayout>
 
