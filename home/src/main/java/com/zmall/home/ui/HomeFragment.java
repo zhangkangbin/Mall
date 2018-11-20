@@ -106,7 +106,7 @@ public class HomeFragment extends BaseListFragment<HomeBean, HomeBean.DataBean> 
 
         ImageLoader.getInstance().displayImage(getActivity().getApplicationContext(), t.getPicUri(), productImg);
 
-        productImg.setOnClickListener(v -> CC.obtainBuilder("User").setActionName("UserLogin").build().call());
+        productImg.setOnClickListener(v -> CC.obtainBuilder("GoodsComponent").setActionName("GoodsDetail").build().call());
         holder.setTextView(R.id.goodsName, t.getGoodsName());
         holder.setTextView(R.id.price, "￥" + t.getPrice());
 

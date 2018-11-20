@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.z.baselibrary.R;
@@ -21,14 +22,15 @@ import com.z.baselibrary.ui.dialog.TipsDialog;
  * Created by zhangkb on 2018/1/30 0030.
  */
 
-public abstract class BaseFragment extends Fragment implements HttpDialogLoading{
+public abstract class BaseFragment extends Fragment implements HttpDialogLoading {
+    View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View view = inflater.inflate(getLayoutId(), container, false);
+        view = inflater.inflate(getLayoutId(), container, false);
         initView(view, inflater, container, savedInstanceState);
 
         return view;
@@ -45,7 +47,7 @@ public abstract class BaseFragment extends Fragment implements HttpDialogLoading
     @Override
     public void showLoading() {
         //todo:
-        if(getActivity()==null){
+        if (getActivity() == null) {
 
             showToast("请求数据中...."); //容错
             return;
@@ -79,7 +81,7 @@ public abstract class BaseFragment extends Fragment implements HttpDialogLoading
     @Override
     public void showToast(String text) {
 
-        if (TextUtils.isEmpty(text)||getActivity()==null) {
+        if (TextUtils.isEmpty(text) || getActivity() == null) {
             return;
         }
 
@@ -118,5 +120,14 @@ public abstract class BaseFragment extends Fragment implements HttpDialogLoading
 
 
     }
+
+    protected TextView setTextView(int viewId, String text) {
+
+        TextView textView = view.findViewById(viewId);
+        textView.setText(text);
+
+        return textView;
+    }
+
 
 }

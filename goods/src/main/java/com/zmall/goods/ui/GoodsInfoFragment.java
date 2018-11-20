@@ -41,6 +41,16 @@ public class GoodsInfoFragment extends BaseFragment {
     }
 
 
+    private void initInfo(GoodsDetailBean.DataBean.ApiGoodsShowDtoBean info) {
+
+
+        setTextView(R.id.goodsTvTitle, info.getGoodsName());
+        setTextView(R.id.goodsTvTitleSub, info.getSubName());
+        setTextView(R.id.goodsTvPrice, "￥" + info.getPrice());
+        setTextView(R.id.goodsTvPrices, "￥" + info.getMarketPrice());
+    }
+
+
     @Override
     public int getLayoutId() {
         return R.layout.fragment_goods_info;
@@ -49,13 +59,14 @@ public class GoodsInfoFragment extends BaseFragment {
     @Override
     public void initView(View view, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         GoodsDetailPresenter presenter = new GoodsDetailPresenter();
-        presenter.getGoodsDetail("1").observe(this, new Observer<GoodsDetailBean>() {
-            @Override
-            public void onChanged(@Nullable GoodsDetailBean goodsDetailBean) {
+        presenter.getGoodsDetail("1").observe(this,
+                goodsDetailBean -> {
+                    if (goodsDetailBean != null) {
+                        initImageCycleView(goodsDetailBean.getData().getImgeList());
+                        initInfo(goodsDetailBean.getData().getApiGoodsShowDto());
+                    }
 
-                initImageCycleView(goodsDetailBean.getData().getImgeList());
-            }
-        });
+                });
 
         mImageCycleView = view.findViewById(R.id.goodsInfoViewPager);
     }

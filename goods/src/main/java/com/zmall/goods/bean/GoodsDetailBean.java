@@ -13,7 +13,7 @@ public class GoodsDetailBean extends BaseBean implements Serializable {
 
 
     /**
-     * data : {"apiGoodsShowDto":{"goodsNo":"1","goodsName":"名嫒气质2018秋季新款V领修身显瘦金丝绒连衣裙礼服中长款A字裙子","subName":"名媛气质 迷人曲线 优雅女神范 高贵轻熟女","price":363,"marketPrice":499},"imgeList":[{"picUri":"https://img.alicdn.com/imgextra/i1/2178558361/TB2QPrEnQZmBKNjSZPiXXXFNVXa_!!2178558361-0-item_pic.jpg","comment":"商品图片"},{"picUri":"https://img.alicdn.com/imgextra/i2/2178558361/TB2BN6inY3nBKNjSZFMXXaUSFXa_!!2178558361.jpg","comment":"商品图片"},{"picUri":"https://img.alicdn.com/imgextra/i1/2178558361/TB2fYmSn8jTBKNjSZFDXXbVgVXa_!!2178558361.jpg","comment":"商品图片"},{"picUri":"https://img.alicdn.com/imgextra/i1/2178558361/TB2XwLenVooBKNjSZFPXXXa2XXa_!!2178558361.jpg","comment":"商品图片"}],"goodsClassAttrList":["主要颜色","尺码"],"goodsEvaluateInfoList":[{"headPortrait":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3797481993,1929347741&fm=27&gp=0.jpg","userName":"河畔小溪人家","evaluateInfo":"质量不错挺实惠的下次还来"},{"headPortrait":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3797481993,1929347741&fm=27&gp=0.jpg","userName":"听雨者","evaluateInfo":"朋友介绍的，物美价廉"},{"headPortrait":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3797481993,1929347741&fm=27&gp=0.jpg","userName":"沉默是金","evaluateInfo":"质量很好"}],"goodsClassParaList":["风格版型","袖长","裙长"],"goodsEvaluateTitleList":[{"title":"质量很好","quantity":66},{"title":"物超所值","quantity":125},{"title":"物流快","quantity":74}],"goodsStaticParticularsList":[{"idGoodsDtlInfo":"1","picInfoUri":"https://img.alicdn.com/imgextra/i2/269385296/O1CN011ozc1HikrKeCCC6_!!269385296.jpg","sortNo":1},{"idGoodsDtlInfo":"2","picInfoUri":"https://img.alicdn.com/imgextra/i2/269385296/TB29r8XI1SSBuNjy0FlXXbBpVXa_!!269385296.jpg","sortNo":2},{"idGoodsDtlInfo":"3","picInfoUri":"https://img.alicdn.com/imgextra/i4/269385296/TB2BBHRnYZnBKNjSZFKXXcGOVXa_!!269385296.jpg","sortNo":3},{"idGoodsDtlInfo":"4","picInfoUri":"https://img.alicdn.com/imgextra/i2/269385296/O1CN011ozc1ac6sqhQoJq_!!269385296.jpg","sortNo":4},{"idGoodsDtlInfo":"5","picInfoUri":"https://img.alicdn.com/imgextra/i2/269385296/TB2SQk_b7zoK1RjSZFlXXai4VXa_!!269385296.jpg","sortNo":5},{"idGoodsDtlInfo":"6","picInfoUri":"https://img.alicdn.com/imgextra/i3/269385296/O1CN011ozc1GS9v19M511_!!269385296.jpg","sortNo":6},{"idGoodsDtlInfo":"7","picInfoUri":"https://img.alicdn.com/imgextra/i4/269385296/O1CN011ozc1LaHUTSktE8_!!269385296.jpg","sortNo":7}],"goodsSafeguardList":["7天无理由","9天内发货"]}
+     * data : {"apiGoodsShowDto":{"goodsNo":"3","goodsName":"茉莉2018秋冬高领保暖复古钉花手工花朵中长款针织拼网纱连衣裙","subName":"保暖长袖 洋气黑泽","price":248,"marketPrice":456},"imgeList":[{"picUri":"https://gd3.alicdn.com/imgextra/i3/60638636/TB2qs3pbhSYBuNjSsphXXbGvVXa_!!60638636.jpg","comment":"商品图片"},{"picUri":"https://gd1.alicdn.com/imgextra/i3/60638636/TB2HEYJaNTI8KJjSspiXXbM4FXa_!!60638636.jpg","comment":"商品图片"},{"picUri":"https://gd3.alicdn.com/imgextra/i3/60638636/TB2EXyCaFHM8KJjSZJiXXbx3FXa_!!60638636.jpg","comment":"商品图片"},{"picUri":"https://gd2.alicdn.com/imgextra/i2/60638636/TB2wJgubXmWBuNjSspdXXbugXXa_!!60638636.jpg","comment":"商品图片"}],"goodsClassAttrList":["主要颜色","尺码"],"goodsEvaluateInfoList":[{"headPortrait":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3797481993,1929347741&fm=27&gp=0.jpg","userName":"河畔小溪人家","evaluateInfo":"质量不错挺实惠的下次还来"},{"headPortrait":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3797481993,1929347741&fm=27&gp=0.jpg","userName":"听雨者","evaluateInfo":"朋友介绍的，物美价廉"},{"headPortrait":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3797481993,1929347741&fm=27&gp=0.jpg","userName":"沉默是金","evaluateInfo":"质量很好"}],"goodsClassParaList":["风格版型","袖长","裙长"],"goodsEvaluateTitleList":[{"title":"质量很好","quantity":66},{"title":"物超所值","quantity":125},{"title":"物流快","quantity":74}],"goodsStaticParticularsList":[],"goodsSafeguardList":["7天无理由","9天内发货"]}
      */
 
     private DataBean data;
@@ -28,13 +28,13 @@ public class GoodsDetailBean extends BaseBean implements Serializable {
 
     public static class DataBean {
         /**
-         * apiGoodsShowDto : {"goodsNo":"1","goodsName":"名嫒气质2018秋季新款V领修身显瘦金丝绒连衣裙礼服中长款A字裙子","subName":"名媛气质 迷人曲线 优雅女神范 高贵轻熟女","price":363,"marketPrice":499}
-         * imgeList : [{"picUri":"https://img.alicdn.com/imgextra/i1/2178558361/TB2QPrEnQZmBKNjSZPiXXXFNVXa_!!2178558361-0-item_pic.jpg","comment":"商品图片"},{"picUri":"https://img.alicdn.com/imgextra/i2/2178558361/TB2BN6inY3nBKNjSZFMXXaUSFXa_!!2178558361.jpg","comment":"商品图片"},{"picUri":"https://img.alicdn.com/imgextra/i1/2178558361/TB2fYmSn8jTBKNjSZFDXXbVgVXa_!!2178558361.jpg","comment":"商品图片"},{"picUri":"https://img.alicdn.com/imgextra/i1/2178558361/TB2XwLenVooBKNjSZFPXXXa2XXa_!!2178558361.jpg","comment":"商品图片"}]
+         * apiGoodsShowDto : {"goodsNo":"3","goodsName":"茉莉2018秋冬高领保暖复古钉花手工花朵中长款针织拼网纱连衣裙","subName":"保暖长袖 洋气黑泽","price":248,"marketPrice":456}
+         * imgeList : [{"picUri":"https://gd3.alicdn.com/imgextra/i3/60638636/TB2qs3pbhSYBuNjSsphXXbGvVXa_!!60638636.jpg","comment":"商品图片"},{"picUri":"https://gd1.alicdn.com/imgextra/i3/60638636/TB2HEYJaNTI8KJjSspiXXbM4FXa_!!60638636.jpg","comment":"商品图片"},{"picUri":"https://gd3.alicdn.com/imgextra/i3/60638636/TB2EXyCaFHM8KJjSZJiXXbx3FXa_!!60638636.jpg","comment":"商品图片"},{"picUri":"https://gd2.alicdn.com/imgextra/i2/60638636/TB2wJgubXmWBuNjSspdXXbugXXa_!!60638636.jpg","comment":"商品图片"}]
          * goodsClassAttrList : ["主要颜色","尺码"]
          * goodsEvaluateInfoList : [{"headPortrait":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3797481993,1929347741&fm=27&gp=0.jpg","userName":"河畔小溪人家","evaluateInfo":"质量不错挺实惠的下次还来"},{"headPortrait":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3797481993,1929347741&fm=27&gp=0.jpg","userName":"听雨者","evaluateInfo":"朋友介绍的，物美价廉"},{"headPortrait":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3797481993,1929347741&fm=27&gp=0.jpg","userName":"沉默是金","evaluateInfo":"质量很好"}]
          * goodsClassParaList : ["风格版型","袖长","裙长"]
          * goodsEvaluateTitleList : [{"title":"质量很好","quantity":66},{"title":"物超所值","quantity":125},{"title":"物流快","quantity":74}]
-         * goodsStaticParticularsList : [{"idGoodsDtlInfo":"1","picInfoUri":"https://img.alicdn.com/imgextra/i2/269385296/O1CN011ozc1HikrKeCCC6_!!269385296.jpg","sortNo":1},{"idGoodsDtlInfo":"2","picInfoUri":"https://img.alicdn.com/imgextra/i2/269385296/TB29r8XI1SSBuNjy0FlXXbBpVXa_!!269385296.jpg","sortNo":2},{"idGoodsDtlInfo":"3","picInfoUri":"https://img.alicdn.com/imgextra/i4/269385296/TB2BBHRnYZnBKNjSZFKXXcGOVXa_!!269385296.jpg","sortNo":3},{"idGoodsDtlInfo":"4","picInfoUri":"https://img.alicdn.com/imgextra/i2/269385296/O1CN011ozc1ac6sqhQoJq_!!269385296.jpg","sortNo":4},{"idGoodsDtlInfo":"5","picInfoUri":"https://img.alicdn.com/imgextra/i2/269385296/TB2SQk_b7zoK1RjSZFlXXai4VXa_!!269385296.jpg","sortNo":5},{"idGoodsDtlInfo":"6","picInfoUri":"https://img.alicdn.com/imgextra/i3/269385296/O1CN011ozc1GS9v19M511_!!269385296.jpg","sortNo":6},{"idGoodsDtlInfo":"7","picInfoUri":"https://img.alicdn.com/imgextra/i4/269385296/O1CN011ozc1LaHUTSktE8_!!269385296.jpg","sortNo":7}]
+         * goodsStaticParticularsList : []
          * goodsSafeguardList : ["7天无理由","9天内发货"]
          */
 
@@ -44,7 +44,7 @@ public class GoodsDetailBean extends BaseBean implements Serializable {
         private List<GoodsEvaluateInfoListBean> goodsEvaluateInfoList;
         private List<String> goodsClassParaList;
         private List<GoodsEvaluateTitleListBean> goodsEvaluateTitleList;
-        private List<GoodsStaticParticularsListBean> goodsStaticParticularsList;
+        private List<?> goodsStaticParticularsList;
         private List<String> goodsSafeguardList;
 
         public ApiGoodsShowDtoBean getApiGoodsShowDto() {
@@ -95,11 +95,11 @@ public class GoodsDetailBean extends BaseBean implements Serializable {
             this.goodsEvaluateTitleList = goodsEvaluateTitleList;
         }
 
-        public List<GoodsStaticParticularsListBean> getGoodsStaticParticularsList() {
+        public List<?> getGoodsStaticParticularsList() {
             return goodsStaticParticularsList;
         }
 
-        public void setGoodsStaticParticularsList(List<GoodsStaticParticularsListBean> goodsStaticParticularsList) {
+        public void setGoodsStaticParticularsList(List<?> goodsStaticParticularsList) {
             this.goodsStaticParticularsList = goodsStaticParticularsList;
         }
 
@@ -113,18 +113,18 @@ public class GoodsDetailBean extends BaseBean implements Serializable {
 
         public static class ApiGoodsShowDtoBean {
             /**
-             * goodsNo : 1
-             * goodsName : 名嫒气质2018秋季新款V领修身显瘦金丝绒连衣裙礼服中长款A字裙子
-             * subName : 名媛气质 迷人曲线 优雅女神范 高贵轻熟女
-             * price : 363.0
-             * marketPrice : 499.0
+             * goodsNo : 3
+             * goodsName : 茉莉2018秋冬高领保暖复古钉花手工花朵中长款针织拼网纱连衣裙
+             * subName : 保暖长袖 洋气黑泽
+             * price : 248.0
+             * marketPrice : 456.0
              */
 
             private String goodsNo;
             private String goodsName;
             private String subName;
-            private double price;
-            private double marketPrice;
+            private String price;
+            private String marketPrice;
 
             public String getGoodsNo() {
                 return goodsNo;
@@ -150,26 +150,26 @@ public class GoodsDetailBean extends BaseBean implements Serializable {
                 this.subName = subName;
             }
 
-            public double getPrice() {
+            public String getPrice() {
                 return price;
             }
 
-            public void setPrice(double price) {
+            public void setPrice(String price) {
                 this.price = price;
             }
 
-            public double getMarketPrice() {
+            public String getMarketPrice() {
                 return marketPrice;
             }
 
-            public void setMarketPrice(double marketPrice) {
+            public void setMarketPrice(String marketPrice) {
                 this.marketPrice = marketPrice;
             }
         }
 
         public static class ImgeListBean {
             /**
-             * picUri : https://img.alicdn.com/imgextra/i1/2178558361/TB2QPrEnQZmBKNjSZPiXXXFNVXa_!!2178558361-0-item_pic.jpg
+             * picUri : https://gd3.alicdn.com/imgextra/i3/60638636/TB2qs3pbhSYBuNjSsphXXbGvVXa_!!60638636.jpg
              * comment : 商品图片
              */
 
@@ -252,42 +252,6 @@ public class GoodsDetailBean extends BaseBean implements Serializable {
 
             public void setQuantity(int quantity) {
                 this.quantity = quantity;
-            }
-        }
-
-        public static class GoodsStaticParticularsListBean {
-            /**
-             * idGoodsDtlInfo : 1
-             * picInfoUri : https://img.alicdn.com/imgextra/i2/269385296/O1CN011ozc1HikrKeCCC6_!!269385296.jpg
-             * sortNo : 1
-             */
-
-            private String idGoodsDtlInfo;
-            private String picInfoUri;
-            private int sortNo;
-
-            public String getIdGoodsDtlInfo() {
-                return idGoodsDtlInfo;
-            }
-
-            public void setIdGoodsDtlInfo(String idGoodsDtlInfo) {
-                this.idGoodsDtlInfo = idGoodsDtlInfo;
-            }
-
-            public String getPicInfoUri() {
-                return picInfoUri;
-            }
-
-            public void setPicInfoUri(String picInfoUri) {
-                this.picInfoUri = picInfoUri;
-            }
-
-            public int getSortNo() {
-                return sortNo;
-            }
-
-            public void setSortNo(int sortNo) {
-                this.sortNo = sortNo;
             }
         }
     }
