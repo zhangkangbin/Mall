@@ -4,9 +4,11 @@ import com.zmall.home.bean.HomeBean;
 import com.zmall.home.bean.ClassTypeBean;
 import com.zmall.home.bean.ClassTypeProductList;
 import com.zmall.home.bean.HomeInfoBean;
+import com.zmall.home.bean.ShoppingCarBean;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 /**
@@ -16,7 +18,6 @@ public interface HomeApi {
 
     @GET("/public/class/init")
     Call<ClassTypeBean> getClassTypeList();
-
 
 
     @GET("/public/class/getClass/{superClassNo}")
@@ -33,4 +34,9 @@ public interface HomeApi {
 
     @GET("/public/main/init/")
     Call<HomeInfoBean> getHomeInfo();
+
+
+    @POST("/token/shopping/shoppingCartGetList")
+    Call<ShoppingCarBean> getShoppingCarInfo();
+
 }

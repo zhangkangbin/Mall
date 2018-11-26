@@ -11,16 +11,18 @@
         android:orientation="horizontal">
 
 
-        <RadioButton
+        <CheckBox
+            android:id="@+id/shoppingCbSelect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:padding="@dimen/space_10" />
+            android:padding="@dimen/space_6" />
 
         <ImageView
-            android:layout_width="@dimen/space_100"
-            android:layout_height="wrap_content"
+            android:id="@+id/shoppingIvImg"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:background="@color/color_ffbbbbbb" />
 
         <LinearLayout
@@ -31,19 +33,26 @@
             android:padding="@dimen/space_10">
 
             <TextView
+                android:id="@+id/shoppingTvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:text="@string/app_name"
+                android:textColor="@color/color_black_333333" />
+
+            <TextView
+                android:id="@+id/shoppingTvSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_6"
                 android:text="@string/app_name" />
 
             <TextView
+                android:id="@+id/shoppingTvPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/app_name" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/app_name" />
+                android:text="@string/app_name"
+                android:textColor="@color/color_ffff4b5a" />
 
         </LinearLayout>
 

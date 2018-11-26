@@ -29,24 +29,36 @@
         android:background="@color/color_white"
         android:orientation="horizontal">
 
+        <CheckBox
+            android:id="@+id/shoppingCbAllSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="全选"
+            android:textColor="#BBBBBB" />
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:paddingRight="@dimen/space_10">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="合计:  " />
+                android:text="合计:  "
+                android:textColor="@color/color_ffff4b5a" />
 
 
             <TextView
+                android:id="@+id/shoppingTvSumPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="80.00" />
+                android:text="0.00"
+                android:textColor="@color/color_ffff4b5a" />
 
 
         </LinearLayout>

@@ -345,7 +345,7 @@ public class ListBindDataHelper<T extends BaseBean, D> {
         notifyDataSetChanged();
     }
 
-    private void notifyDataSetChanged() {
+    public void notifyDataSetChanged() {
 
         if (mAdapter != null) {
             mAdapter.notifyDataSetChanged();
