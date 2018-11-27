@@ -39,4 +39,22 @@ public interface HomeApi {
     @POST("/token/shopping/shoppingCartGetList")
     Call<ShoppingCarBean> getShoppingCarInfo();
 
+
+    /**
+     * add goods of shopping Car
+     *
+     * @return
+     */
+    @POST("/token/shopping/shoppingCartUpdateByNo")
+    Call<ShoppingCarBean> updateShoppingCart();
+
+    /**
+     * delete goods of shopping Car
+     *
+     * @return
+     */
+    @POST("/token/shopping/shoppingCartDeleteByNo")
+    Call<ShoppingCarBean> deleteShoppingCart();
+
+
 }
