@@ -58,6 +58,32 @@ public class OrderDetailActivity extends BaseAppCompatActivity {
         payPrice.setText(String.format("应付款：￥%s", info.getDealSum()));
         setGoodsList(info.getGoodsList());
 
+        TextView orderTvFreight = findViewById(R.id.orderTvFreight);
+        orderTvFreight.setText("￥" + info.getPostFee());
+
+        TextView orderTvPay = findViewById(R.id.orderTvPay);
+        orderTvPay.setText("￥" + info.getDealSum());
+
+        TextView orderDetailTvFpType = findViewById(R.id.orderDetailTvFpType);
+        orderDetailTvFpType.setText(info.getInvoiceType());
+
+        TextView orderDetailTvFpTitle = findViewById(R.id.orderDetailTvFpTitle);
+        orderDetailTvFpTitle.setText(info.getInvoiceHead());
+
+        TextView orderDetailTvFpContent = findViewById(R.id.orderDetailTvFpContent);
+        orderDetailTvFpContent.setText(info.getInvoiceContent());
+
+        TextView orderDetailTvPayType = findViewById(R.id.orderDetailTvPayType);
+
+        if ("1".equals(info.getPaymentType())) {
+            orderDetailTvPayType.setText("微信支付");
+        } else {
+            orderDetailTvPayType.setText("支付宝支付");
+        }
+
+        TextView orderDetailTvPostTime = findViewById(R.id.orderDetailTvPostTime);
+        orderDetailTvPostTime.setText(info.getPaymentDate());
+
     }
 
 
@@ -71,7 +97,7 @@ public class OrderDetailActivity extends BaseAppCompatActivity {
     private void getOrderDetail(String orderId) {
 
         HttpUtil.getRetrofit().create(OrderApi.class)
-                .getOrderAllInfo(orderId).enqueue(new MyCallback<OrderDetailBean>(this,MyCallback.TIPS_TOAST) {
+                .getOrderAllInfo(orderId).enqueue(new MyCallback<OrderDetailBean>(this, MyCallback.TIPS_TOAST) {
 
             @Override
             public void onSuccess(Call<OrderDetailBean> call, Response<OrderDetailBean> response) {
