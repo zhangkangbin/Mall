@@ -1,5 +1,6 @@
 package com.zmall.home.api;
 
+import com.z.baselibrary.net.BaseBean;
 import com.zmall.home.bean.HomeBean;
 import com.zmall.home.bean.ClassTypeBean;
 import com.zmall.home.bean.ClassTypeProductList;
@@ -7,6 +8,8 @@ import com.zmall.home.bean.HomeInfoBean;
 import com.zmall.home.bean.ShoppingCarBean;
 
 import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
@@ -53,8 +56,9 @@ public interface HomeApi {
      *
      * @return
      */
+    @FormUrlEncoded
     @POST("/token/shopping/shoppingCartDeleteByNo")
-    Call<ShoppingCarBean> deleteShoppingCart();
+    Call<BaseBean> deleteShoppingCart(@Field("idShoppingCart") String idShoppingCart);
 
 
 }

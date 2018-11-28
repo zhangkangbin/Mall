@@ -2,10 +2,10 @@ package com.zkb.mall;
 
 
 import android.os.Bundle;
+import android.os.Handler;
 
 import com.billy.cc.core.component.CC;
 import com.z.baselibrary.ui.BaseAppCompatActivity;
-
 
 
 /**
@@ -27,7 +27,11 @@ public class MainActivity extends BaseAppCompatActivity {
     @Override
     protected void initData(Bundle savedInstanceState) {
 
-        CC.obtainBuilder("Home").build().call();
+        new Handler().postDelayed(() -> {
+            finish();
+            CC.obtainBuilder("Home").build().call();
+        }, 1000);
+
     }
 
 
