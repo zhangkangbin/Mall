@@ -2,9 +2,10 @@ package com.zmall.user.bean;
 
 import com.z.baselibrary.net.BaseBean;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class AddressManageBean extends BaseBean {
+public class AddressManageBean extends BaseBean implements Serializable {
 
     private List<DataBean> data;
 
@@ -16,7 +17,7 @@ public class AddressManageBean extends BaseBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable{
         /**
          * idUserAddrMgr : 3
          * receiverName : 李四

@@ -119,6 +119,14 @@
 
     <include layout="@layout/view_h_line" />
 
+
+    <CheckBox
+        android:id="@+id/addressCbSetDefault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_6"
+        android:text="设置默认地址" />
+
     <Button
         android:id="@+id/addBtnSave"
         android:layout_width="match_parent"

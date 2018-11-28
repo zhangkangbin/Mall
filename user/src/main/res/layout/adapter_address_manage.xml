@@ -46,23 +46,24 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/addressTvDefault"
+                android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:visibility="gone"
+                android:textSize="@dimen/text_size_12"
+                android:textColor="@color/color_ffff4b5a"
                 android:padding="@dimen/space_10"
-                android:text="设置默认" />
+                android:text="默认地址" />
 
             <TextView
+                android:id="@+id/addressTvEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/space_10"
                 android:text="编辑" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/space_10"
-                android:text="删除" />
+
 
 
         </LinearLayout>

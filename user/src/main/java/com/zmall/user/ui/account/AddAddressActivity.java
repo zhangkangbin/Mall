@@ -2,6 +2,7 @@ package com.zmall.user.ui.account;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -20,7 +21,9 @@ import com.z.baselibrary.ui.BaseAppCompatActivity;
 import com.zmall.user.R;
 import com.zmall.user.api.AddressApi;
 import com.zmall.user.api.UserApi;
+import com.zmall.user.bean.AddressManageBean;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,23 +43,11 @@ public class AddAddressActivity extends BaseAppCompatActivity {
     @Override
     protected void initView(Bundle savedInstanceState) {
 
-        initToobar("新建地址");
-    }
-
-
-    private EditText mName;
-    private EditText mPhone;
-    private String mAddressSSQ = "广东省深圳市南山区";
-    private EditText mAddressDetail;
-
-    private CityPickerView mPicker = new CityPickerView();
-
-    @Override
-    protected void initData(Bundle savedInstanceState) {
         mName = findViewById(R.id.addEdtName);
         mPhone = findViewById(R.id.addEdtPhone);
         mAddressDetail = findViewById(R.id.addEdtDetailAddress);
 
+        addressCbSetDefault = findViewById(R.id.addressCbSetDefault);
 
         findViewById(R.id.addBtnSave).setOnClickListener(view -> {
 
@@ -64,18 +55,55 @@ public class AddAddressActivity extends BaseAppCompatActivity {
         });
 
         initPicker();
+
     }
 
+
+    private EditText mName;
+    private EditText mPhone;
     private String mProvinceName;
     private String mCityName;
     private String mDistrictName;
+    private EditText mAddressDetail;
+
+    private CityPickerView mPicker = new CityPickerView();
+
+
+    private CheckBox addressCbSetDefault;
+
+    @Override
+    protected void initData(Bundle savedInstanceState) {
+
+
+
+        AddressManageBean.DataBean address = (AddressManageBean.DataBean) getIntent().getSerializableExtra("ADDRESS_JSON");
+
+        if (address == null) {
+            initToobar("新建地址");
+        } else {
+            initToobar("编辑地址");
+
+            mName.setText(address.getReceiverName());
+            mPhone.setText(address.getReceiverMobile());
+            mAddressDetail.setText(address.getReceiverAddressDetail());
+
+            mProvinceName = address.getReceiverState();
+            mCityName = address.getReceiverCity();
+            mDistrictName = address.getDefaultSite();
+
+            addressSSQ.setText(String.format("%s%s%s", mProvinceName, mCityName, mDistrictName));
+        }
+
+    }
+
+    TextView addressSSQ;
 
     private void initPicker() {
         /**
          * 预先加载仿iOS滚轮实现的全部数据
          */
         mPicker.init(this);
-        final TextView addressSSQ = findViewById(R.id.addTvSelectAddressSSQ);
+        addressSSQ = findViewById(R.id.addTvSelectAddressSSQ);
         addressSSQ.setOnClickListener(view -> {
 
             //显示
@@ -151,7 +179,7 @@ public class AddAddressActivity extends BaseAppCompatActivity {
         map.put("receiverDistrict", mDistrictName);
         map.put("receiverAddressDetail", addressDetail);
         map.put("receiverZipCode", "0");
-        map.put("defaultSite", "0");
+        map.put("defaultSite", addressCbSetDefault.isChecked() ? "1" : "0");
 
         // TextUtils.isEmpty()
 

@@ -2,6 +2,7 @@ package com.zmall.user.ui.account;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.z.baselibrary.net.HttpUtil;
 import com.z.baselibrary.recycleview.BaseListActivity;
@@ -53,11 +54,30 @@ public class AddressManageActivity extends BaseListActivity<AddressManageBean, A
     }
 
     @Override
-    public void bindData(CombinationViewHolder holder, AddressManageBean.DataBean t, int position) {
+    public void bindData(CombinationViewHolder holder, AddressManageBean.DataBean dataBean, int position) {
 
-        holder.setTextView(R.id.addressTvName, t.getReceiverName());
-        holder.setTextView(R.id.addressTvPhone, t.getReceiverMobile());
-        holder.setTextView(R.id.addressTvAddress, t.getReceiverAddressDetail());
+        holder.setTextView(R.id.addressTvName, dataBean.getReceiverName());
+        holder.setTextView(R.id.addressTvPhone, dataBean.getReceiverMobile());
+        holder.setTextView(R.id.addressTvAddress, dataBean.getReceiverAddressDetail());
+
+
+        holder.getView(R.id.addressTvEdit).setOnClickListener(v -> {
+            Intent intent = new Intent(AddressManageActivity.this, AddAddressActivity.class);
+            intent.putExtra("ADDRESS_JSON", dataBean);
+            startActivity(intent);
+
+        });
+
+
+        View addressTvDefault = holder.getView(R.id.addressTvDefault);
+
+        if("1".equals(dataBean.getDefaultSite())){
+
+            addressTvDefault.setVisibility(View.VISIBLE);
+        }else {
+
+            addressTvDefault.setVisibility(View.GONE);
+        }
 
     }
 
