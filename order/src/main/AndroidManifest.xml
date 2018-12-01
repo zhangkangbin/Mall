@@ -4,7 +4,8 @@
 
     <application>
         <activity android:name=".ui.AllOrderActivity" />
-        <activity android:name=".ui.OrderDetailActivity"></activity>
+        <activity android:name=".ui.OrderDetailActivity" />
+        <activity android:name=".ui.OrderActivity"></activity>
     </application>
 
 </manifest>

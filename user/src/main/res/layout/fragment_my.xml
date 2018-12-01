@@ -67,6 +67,7 @@
         android:padding="@dimen/space_15">
 
         <TextView
+            android:id="@+id/myTvWaitPay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -77,6 +78,7 @@
             android:textColor="@color/color_fff76363" />
 
         <TextView
+            android:id="@+id/myTvWaitPost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -87,6 +89,7 @@
             android:textColor="@color/color_fff76363" />
 
         <TextView
+            android:id="@+id/myTvWaitReceive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -97,6 +100,7 @@
             android:textColor="@color/color_fff76363" />
 
         <TextView
+            android:id="@+id/myTvOrderSuccess"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
