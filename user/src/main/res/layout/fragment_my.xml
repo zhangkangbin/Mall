@@ -171,6 +171,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/space_10"
         android:layout_marginRight="@dimen/space_10"
+        android:id="@+id/myTvMsg"
         android:background="@color/color_white"
         android:padding="@dimen/space_15">
 

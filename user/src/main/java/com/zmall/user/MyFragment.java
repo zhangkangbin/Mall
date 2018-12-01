@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import com.billy.cc.core.component.CC;
 import com.z.baselibrary.ui.BaseFragment;
 import com.zmall.user.ui.account.AccountSettingActivity;
+import com.zmall.user.ui.login.LoginActivity;
 
 
 /**
@@ -41,6 +42,13 @@ public class MyFragment extends BaseFragment {
 
             CC.obtainBuilder("order").build().call();
         });
+
+        view.findViewById(R.id.myTvMsg).setOnClickListener(v -> {
+
+            startActivity(new Intent(getActivity(), LoginActivity.class));
+        });
+
+
 
 
     }
